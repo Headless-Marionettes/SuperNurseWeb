@@ -1,0 +1,85 @@
+//_color.scss -  contains palette and context for spacing
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+
+$spacing-palette: (
+  'reset': 0,
+  'micro': (
+    'xs': rem-calc(2),
+    'sm': rem-calc(5),
+    'md': rem-calc(10),
+    'lr': rem-calc(15),
+    'xl': rem-calc(20),
+    'xxl': rem-calc(25)
+  ),
+  'base': (
+    'sm': rem-calc(30),
+    'md': rem-calc(35),
+    'lr': rem-calc(40),
+    'xl': rem-calc(45),
+    'xxl': rem-calc(50)
+  ),
+  'grand': (
+    'sm': rem-calc(55),
+    'md': rem-calc(60),
+    'lr': rem-calc(65),
+    'xl': rem-calc(70),
+    'xxl': rem-calc(75)
+  ),
+  'xgrand': (
+    'sm': rem-calc(80),
+    'md': rem-calc(85),
+    'lr': rem-calc(90),
+    'xl': rem-calc(95),
+    'xxl': rem-calc(100),
+    'xxxl': rem-calc(120)
+  )
+);
+
+$spacing-context: (
+  'reset': 'reset',
+  'div': (
+    'small': 'micro.md',
+    'large': 'micro.xl'
+  ),
+  'primary-button': (
+    'small':'micro.md micro.lr',
+    'medium': 'micro.lr micro.xl'
+  ),
+  'button-outer': (
+    'small': 'micro.md',
+    'medium': 'micro.lr',
+    'large': 'micro.xl'
+  ),
+  'menu-header-inner': 'base.sm',
+  'form': (
+    'inner': (
+      'small': 'micro.md',
+      'large': 'micro.xl'
+    ),
+    'two-col': (
+      'gap': (
+        'small': 'reset',
+        'medium': 'micro.md',
+      ),
+      'exp-date-gap': 'micro.sm'
+    ),
+    'label': 'micro.sm',
+    'button': (
+      'small': 'micro.md',
+      'medium': 'reset'
+    ),
+    'fieldset': (
+      'small': 'micro.lr',
+      'medium': 'base.sm',
+    )
+  ),
+  'card': (
+    'inner': (
+      'small': 'micro.xl',
+      'medium': 'micro.lr'
+    )
+  )
+)

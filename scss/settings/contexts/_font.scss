@@ -1,0 +1,147 @@
+//_font.scss -  contains palette and context for font size and family
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+$font-size-palette: (
+  'micro': (
+    '1': rem-calc(8),
+    '2': rem-calc(9),
+    '3': rem-calc(10),
+    '4': rem-calc(11),
+    '5': rem-calc(12),
+    '6': rem-calc(13),
+    '7': rem-calc(14),
+    '8': rem-calc(15)
+  ),
+  'base': (
+    '1': rem-calc(16),
+    '2': rem-calc(17),
+    '3': rem-calc(18),
+    '4': rem-calc(19),
+    '5': rem-calc(20),
+    '6': rem-calc(21),
+    '7': rem-calc(22),
+    '8': rem-calc(23)
+  ),
+  'grand': (
+    '1': rem-calc(24),
+    '2': rem-calc(25),
+    '3': rem-calc(26),
+    '4': rem-calc(27),
+    '5': rem-calc(28),
+    '6': rem-calc(29),
+    '7': rem-calc(30),
+    '8': rem-calc(31)
+  ),
+  'xgrand': (
+    '1': rem-calc(32),
+    '2': rem-calc(33),
+    '3': rem-calc(34),
+    '4': rem-calc(35),
+    '5': rem-calc(36),
+    '6': rem-calc(37),
+    '7': rem-calc(38),
+    '8': rem-calc(39),
+    '9': rem-calc(40)
+  ),
+  'xxgrand': (
+    '1': rem-calc(45),
+    '2': rem-calc(50),
+    '3': rem-calc(55),
+    '4': rem-calc(60),
+    '5': rem-calc(65),
+    '6': rem-calc(70),
+    '7': rem-calc(75),
+    '8': rem-calc(80)
+  )
+);
+
+$font-size-context: (
+  'typography': (
+    '.banner': (
+      'small': 'xgrand.4',
+      'medium': 'xxgrand.1',
+      'large': 'xxgrand.4',
+    ),
+    'h1': (
+      'small': 'xgrand.1',
+      'medium':'xgrand.7',
+      'large': 'xxgrand.1',
+    ),
+    'h2': (
+      'small': 'grand.4',
+      'medium': 'xgrand.4',
+      'large':'xgrand.7'
+    ),
+    'h3': (
+      'small': 'grand.3',
+      'medium': 'grand.7',
+      'large':'xgrand.7'
+    ),
+    'h4': (
+      'small': 'grand.1',
+      'medium': 'grand.3',
+      'large':'grand.7'
+    ),
+    'h5': (
+      'small': 'base.7',
+      'medium':'grand.1'
+    ),
+    'h6': (
+      'small': 'base.3',
+      'medium':'base.5'
+    ),
+    '.large-copy': (
+      'small': 'base.1',
+      'medium': 'base.3'
+    ),
+    'p': (
+      'small': 'micro.7',
+      'medium': 'base.1'
+    ),
+    '*[class$="-button"]': (
+      'small': 'micro.7',
+      'medium':'base.1',
+      'large':'base.3'
+    ),
+    '.subheading': (
+      'small': 'base.3',
+      'medium': 'base.5',
+      'large': 'base.7',
+    )
+  ),
+  'menu-page': (
+    'copy': 'grand.1',
+    'promotion': (
+      'prices': (
+        'small': 'grand.7',
+        'large': 'grand.4',
+        'xlarge': 'grand.5'
+      )
+    ),
+    'category': (
+      'ingr': (
+        'small': 'base.1',
+        'large': 'base.5'
+      )
+    )
+  ),
+  'footer': 'micro.5',
+  'form': (
+    'label': (
+      'small': 'base.3',
+      'large': 'base.5'
+    ),
+    'fieldset': (
+      'small': 'base.5',
+      'large': 'grand.2'
+    ),
+    'star': 'micro.3',
+    'error': 'micro.7',
+    'price': 'base.5'
+  )
+);

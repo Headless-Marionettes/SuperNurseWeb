@@ -3,3 +3,4 @@ node_modules/**
 .DS_Store
 .idea
 #gulpfile.js
+#css/styles.css

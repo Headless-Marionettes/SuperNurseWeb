@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Style guide</title>
+<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
+<link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link href="./css/styles.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+</head>
+<body class="styleguide container">
+<br>
+<h2>Colors</h2>
+<hr>
+<div class="color-grid">
+    <div>
+        <p>Primary:</p>
+        <div class="color-primary">#2196F3</div>
+    </div>
+    <div>
+        <p>Dark Primary:</p>
+        <div class="color-primary-dark">#0D68B1</div>
+    </div>
+    <div>
+        <p>Light Primary:</p>
+        <div class="color-primary-light">#D7EDFF</div>
+    </div>
+    <div>
+        <p>Accent:</p>
+        <div class="color-primary-accent">#21f3e9</div>
+    </div>
+    <div>
+        <p>Dark Accent:</p>
+        <div class="color-dark-accent">#1ad6cd</div>
+    </div>
+    <div>
+        <p>Error:</p>
+        <div class="color-primary-error">#e53935</div>
+    </div>
+    <div>
+        <p>Text Color Primary:</p>
+        <div class="color-primary-text">#212121</div>
+    </div>
+    <div>
+        <p>Text Color Primary:</p>
+        <div class="color-secondary-text">#757575</div>
+    </div>
+    <div>
+        <p>Light Grey:</p>
+        <div class="color-light-grey">#D1D1D1</div>
+    </div>
+</div>
+<br>
+<h2>Typography</h2>
+<hr>
+<h1 class="banner">Header 1 Banner</h1>
+<h1>Header 1 - Roboto 500</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<h6>Header 6</h6>
+<p class="subheading">Subheading copy -- Montserrat 400</p>
+<section>
+    <p class="large-copy">Large-copy - Roboto 400</p>
+</section>
+
+<section>
+    <p>Paragraph - Montserrat 400</p>
+</section>
+<h2>Buttons</h2>
+<hr>
+<div>
+    <a class="primary-button" href="#">Primary button</a>
+    <a class="secondary-button" href="#">Secondary button</a>
+    <a class="accent-button" href="#">Accent button</a>
+</div>
+<div>
+    <a class="disabled primary-button" href="#" disabled>Primary button</a>
+    <a class="disabled secondary-button" href="#">Secondary button</a>
+    <a class="disabled accent-button" href="#">Accent button</a>
+</div>
+<h2>Form</h2>
+<hr>
+<div>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword" class="form-label">Password - Focused </label>
+            <input type="password" id="inputPassword" class="form-control focused" aria-describedby="passwordHelpBlock">
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword5" class="form-label">Password - Error </label>
+            <input type="password" id="inputPassword5" class="form-control error" aria-describedby="passwordHelpBlock">
+            <small id="passwordHelpBlock" class="form-text form-error-message">Wrong Response</small>
+        </div>
+
+        <div class="form-group">
+            <label for="style-guide-select" class="form-label">Example select</label>
+            <select class="form-control" id="style-guide-select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" value="" id="defaultCheck1" checked>
+            <label class="custom-control-label" for="defaultCheck1">
+                Default checkbox
+            </label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="custom-control-label" for="defaultCheck2">
+                Default checkbox
+            </label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" value="" id="defaultCheck3">
+            <label class="custom-control-label" for="defaultCheck3">
+                Default checkbox
+            </label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input form-check-input" type="checkbox" value="" id="defaultCheck4">
+            <label class="custom-control-label" for="defaultCheck4">
+                Default checkbox
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="style-guide-text-area" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="style-guide-text-area" rows="3"></textarea>
+        </div>
+
+        <div class="three-col-fields">
+            <div class="form-group">
+                <label for="three-col-fields1" class="form-label required">Three</label>
+                <input type="text" class="form-control" id="three-col-fields1" placeholder="" required>
+                <span class="form-error-message">Error message</span>
+            </div>
+
+            <div class="form-group">
+                <label for="three-col-fields2" class="form-label required">Columns</label>
+                <input type="text" class="form-control" id="three-col-fields2" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="three-col-fields3" class="form-label required">Inputs</label>
+                <input type="text" class="form-control" id="three-col-fields3" placeholder="" required>
+            </div>
+        </div>
+        <div class="two-col-fields">
+            <button type="submit" id="submit-button" class="primary-button">Submit</button>
+            <button type="reset" class="secondary-button">Reset</button>
+        </div>
+    </form>
+</div>
+<h2>Cards</h2>
+<hr>
+<div class="container">
+    <div class="cards">
+        <div class="card-wrapper">
+            <a class="card-link row" href="#">
+                <div class="image-wraper col-6 col-sm-12">
+                    <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="content col-6 col-sm-12">
+                    <p class="name subheading">Patient Name</p>
+                    <div class="details">
+                        <div class="details-row">
+                            <p class="details-label">Age: </p>
+                            <p class="details-value">87</p>
+                        </div>
+                        <div class="details-row">
+                            <p class="details-label">Room: </p>
+                            <p class="details-value">205</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="card-wrapper">
+            <a class="card-link row" href="#">
+                <div class="image-wraper col-6 col-sm-12">
+                    <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="content col-6 col-sm-12">
+                    <p class="name subheading">Patient Name</p>
+                    <div class="details">
+                        <div class="details-row">
+                            <p class="details-label">Age: </p>
+                            <p class="details-value">87</p>
+                        </div>
+                        <div class="details-row">
+                            <p class="details-label">Room: </p>
+                            <p class="details-value">205</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="card-wrapper">
+            <a class="card-link row" href="#">
+                <div class="image-wraper col-6 col-sm-12">
+                    <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="content col-6 col-sm-12">
+                    <p class="name subheading">Patient Name</p>
+                    <div class="details">
+                        <div class="details-row">
+                            <p class="details-label">Age: </p>
+                            <p class="details-value">87</p>
+                        </div>
+                        <div class="details-row">
+                            <p class="details-label">Room: </p>
+                            <p class="details-value">205</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="card-wrapper">
+            <a class="card-link row" href="#">
+                <div class="image-wraper col-6 col-sm-12">
+                    <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="content col-6 col-sm-12">
+                    <p class="name subheading">Patient Name</p>
+                    <div class="details">
+                        <div class="details-row">
+                            <p class="details-label">Age: </p>
+                            <p class="details-value">87</p>
+                        </div>
+                        <div class="details-row">
+                            <p class="details-label">Room: </p>
+                            <p class="details-value">205</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="card-wrapper">
+            <a class="card-link row" href="#">
+                <div class="image-wraper col-6 col-sm-12">
+                    <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="content col-6 col-sm-12">
+                    <p class="name subheading">Patient Name</p>
+                    <div class="details">
+                        <div class="details-row">
+                            <p class="details-label">Age: </p>
+                            <p class="details-value">87</p>
+                        </div>
+                        <div class="details-row">
+                            <p class="details-label">Room: </p>
+                            <p class="details-value">205</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+</body>
+</html>

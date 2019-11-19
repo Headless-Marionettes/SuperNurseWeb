@@ -1,0 +1,66 @@
+//_global.scss -  contains global scss functions
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+//converts px values to rem, with base 16
+@function rem-calc($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+//returns values from nested map
+@function map-deep-get($map, $keys) {
+  @each $key in $keys {
+    @if $key == 'small' or $key == 'medium' or $key == 'large' or $key == 'xlarge'{
+      @return $map;
+    } @else {
+      $map: map-get($map, $key);
+    }
+  }
+  @return $map;
+}
+
+//split the string value
+//took from - https://stackoverflow.com/questions/32376461/how-to-split-a-string-into-two-lists-of-numbers-in-sass
+@function str-split($string, $separator) {
+  // empty array/list
+  $split-arr: ();
+  // first index of separator in string
+  $index: str-index($string, $separator);
+  // loop through string
+  @while $index != null {
+    // get the substring from the first character to the separator
+    $item: str-slice($string, 1, $index - 1);
+    // push item to array
+    $split-arr: append($split-arr, $item);
+    // remove item and separator from string
+    $string: str-slice($string, $index + 1);
+    // find new index of separator
+    $index: str-index($string, $separator);
+  }
+  // add the remaining string to list (the last item)
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+//returns value from context map
+@function getValue($context, $contextMap) {
+  $contextVal: str-split($context, '.');
+  $value: map-deep-get($contextMap, $contextVal);
+  @return $value;
+}
+
+//returns value from palette map
+@function getValueFromPallete($palette, $value){
+  $pallete-value: getValue($value, $palette);
+  @return $pallete-value;
+}
+
+//returns value from color palette
+@function get-color($context){
+  $context-value: getValue($context, $color-context);
+  $palette-value: map_get($color-palette, $context-value);
+  @return $palette-value;
+}

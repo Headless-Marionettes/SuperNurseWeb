@@ -1,0 +1,41 @@
+//_button.scss -  contains context for buttons
+//(primary, secondary, accent)
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+$buttons-context: (
+  'primary-button': (
+    'front': 'white',
+    'back': 'primary',
+    'border': 'primary',
+    'hover-front': 'white',
+    'hover-back': 'primary-dark',
+    'border-hover': 'primary-dark',
+    'disabled-front':'dark-grey',
+    'disabled-back':'light-grey',
+    'disabled-border':'light-grey'
+  ),
+  'secondary-button': (
+    'front': 'primary',
+    'back': 'white',
+    'border': 'primary',
+    'hover-front': 'primary-dark',
+    'hover-back': 'white',
+    'border-hover': 'primary-dark',
+    'disabled-front':'light-grey',
+    'disabled-back':'white',
+    'disabled-border':'light-grey'
+  ),
+  'accent-button': (
+    'front': 'accent',
+    'back': 'white',
+    'border': 'accent',
+    'hover-front': 'dark-accent',
+    'hover-back': 'white',
+    'border-hover': 'dark-accent',
+    'disabled-front':'light-grey',
+    'disabled-back':'white',
+    'disabled-border':'light-grey'
+  )
+);

@@ -1,0 +1,12 @@
+//_screenSizes.scss -  contains palette for screen sizes
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+$screen-sizes: (
+  'small': rem-calc(320),
+  'medium': rem-calc(576),
+  'large': rem-calc(768),
+  'xlarge': rem-calc(992),
+  'xxlarge': rem-calc(1200)
+);

@@ -1,0 +1,92 @@
+//_global.scss -  contains global scss mixins
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+//mixin for applying media-query
+@mixin media-query\apply($screen-size: 'small') {
+  @media only screen and (min-width: map-get($screen-sizes, $screen-size)) {
+    @content;
+  }
+}
+
+//mixin for applying specific context value for passed css rule
+@mixin context-value\apply($context, $context-map, $palette, $rule) {
+  $default-context: getValue($context, $context-map);
+  @if type-of($default-context) == 'map' {
+    @each $size, $value in $default-context { //for each type media-query
+
+      $several-val: str-split($value, ' '); //if there are several values, like for margins
+      @if type-of($several-val) == 'list' {
+        $full-value: ();
+        @each $val in $several-val {
+          $full-value: append($full-value, getValueFromPallete($palette, $val), space);
+        };
+
+        @if $size == 'small' { //if has small, don't use media-query code
+          #{$rule}: $full-value;
+        } @else {
+          @include media-query\apply($size) {
+            #{$rule}: $full-value;
+          }
+        }
+
+      } @else {
+        @if $size == 'small' { //if has small, don't use media-query code
+          #{$rule}: getValueFromPallete($palette, $value);
+        } @else {
+          @include media-query\apply($size) {
+            #{$rule}: getValueFromPallete($palette, $value);
+          }
+        }
+      }
+    }
+  } @else { //no  media-query
+    $several-val: str-split($default-context, ' '); //if there are several values, like for margins
+    @if type-of($several-val) == 'list' {
+      $full-value: ();
+      @each $val in $several-val {
+        $full-value: append($full-value, getValueFromPallete($palette, $val), space);
+      };
+      #{$rule}: $full-value;
+    } @else {
+      #{$rule}: getValueFromPallete($palette, $default-context);
+    }
+  }
+}
+
+//mixin for applying global context value for passed css rule
+@mixin default-value\apply($default-value, $context-map, $palette, $rule) {
+  $default-val: map_get($context-map, $default-value);
+
+  @each $tag, $value in $default-val {
+    @if type-of($value) == 'map' {
+      #{$tag} {
+        @each $size, $sizeValue in $value { //for each type media-query
+          @if $size == 'small' {
+            #{$rule}: getValueFromPallete($palette, $sizeValue);
+          } @else {
+            @include media-query\apply($size) {
+              #{$rule}: getValueFromPallete($palette, $sizeValue);
+            }
+          }
+        }
+      }
+    } @else {
+      $several-val: str-split($value, ' '); //if there are several values, like for margins
+      @if type-of($several-val) == 'list' {
+        $full-value: ();
+        @each $val in $several-val {
+          $full-value: append($full-value, getValueFromPallete($palette, $val), space);
+        };
+        #{$tag} {
+          #{$rule}: $full-value;
+        }
+      } @else {
+        #{$tag} {
+          #{$rule}: getValueFromPallete($palette, $value);
+        }
+      }
+    }
+  }
+}

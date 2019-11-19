@@ -1,0 +1,246 @@
+//_global.scss -  contains global scss styles,
+// which used for all pages and styleguide
+//
+// Author:
+
+
+@include typography\apply();
+@include buttons\apply();
+
+body {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
+  font-family: $font-secondary;
+}
+
+//Styleguide color grid
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr [col-start]);
+  grid-gap: rem-calc(20);
+
+  * {
+    padding: rem-calc(20) 0;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .color-primary {
+    @include back-color\apply('primary');
+  }
+
+  .color-primary-dark {
+    @include back-color\apply('primary-dark');
+  }
+
+  .color-primary-light {
+    @include back-color\apply('primary-light');
+  }
+
+  .color-primary-accent {
+    @include back-color\apply('accent');
+  }
+
+  .color-primary-error {
+    @include back-color\apply('error');
+  }
+
+  .color-primary-text {
+    @include back-color\apply('text-primary');
+    color: get-color('error');
+  }
+
+  .color-secondary-text {
+    @include back-color\apply('text-secondary');
+  }
+
+  .color-light-grey {
+    @include back-color\apply('light-grey');
+  }
+
+  .color-dark-accent {
+    @include back-color\apply('dark-accent');
+  }
+}
+
+@mixin default-form\apply() {
+  .form-control {
+    &.error {
+      border: get-color('error') rem-calc(2) solid;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    @include back-color\apply('checkbox');
+    border-color: get-color('checkbox');
+  }
+
+  .two-col-fields, .three-col-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > * {
+      flex: 1 1 48%;
+
+      &:first-child {
+        @include spacing\apply('form.two-col.gap', $types: ('margin'), $sides: ('right'));
+      }
+    }
+
+    @include media-query\apply('medium') {
+      flex-direction: row;
+    }
+  }
+
+  .three-col-fields {
+    > * {
+      &:nth-child(2) {
+        @include spacing\apply('form.two-col.gap', $types: ('margin'), $sides: ('right'));
+      }
+    }
+  }
+
+  .form-label, legend {
+    @include font-size\apply('form.label');
+    @include spacing\apply('form.label', $types: ('margin'), $sides: ('bottom'));
+
+    font-family: $font-secondary;
+  }
+
+  label.required {
+    &:after {
+      @include font-size\apply('form.star');
+      content: ' *';
+      vertical-align: super;
+      color: get-color('error');
+    }
+  }
+
+  legend {
+    @include font-size\apply('form.fieldset');
+    text-transform: uppercase;
+  }
+
+  fieldset {
+    @include spacing\apply('form.fieldset', $types: ('margin'), $sides: ('bottom'));
+  }
+
+  .submit-button {
+    @include spacing\apply('form.button', $types: ('margin'), $sides: ('bottom'));
+  }
+
+  .form-error-message {
+    @include font-size\apply('form.error');
+    @include front-color\apply('form.error');
+  }
+}
+
+@mixin default-cards\apply() {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  .card-wrapper {
+    @include spacing\apply('card.inner', $types: ('padding'), $sides: ('all'));
+
+    margin-bottom: 15px;
+
+    flex: 1 1 100%;
+    box-shadow: 1px 5px 10px get-color('light-grey');
+
+    &:hover {
+      box-shadow: 1px 5px 20px 10px get-color('light-grey');
+    }
+
+    @include media-query\apply('medium') {
+      flex: 0 0 calc(50% - 10px);
+      margin: 0 5px 10px;
+    }
+
+    @include media-query\apply('large') {
+      flex: 0 0 calc(33% - 10px);
+    }
+
+    @include media-query\apply('xlarge') {
+      flex: 0 0 calc(25% - 20px);
+      margin: 0 10px 10px;
+    }
+
+    @include media-query\apply('xxlarge') {
+      flex: 0 0 calc(20% - 20px);
+    }
+
+    a {
+      &:hover {
+        @include front-color\apply('text-primary');
+      }
+    }
+  }
+
+  .card-link {
+    .details {
+      display: table;
+    }
+
+    .details-row {
+      display: table-row;
+
+      > * {
+        display: table-cell;
+      }
+    }
+
+    .details-value {
+      padding-left: 10px;
+    }
+
+    .details-label {
+      font-weight: 500;
+    }
+  }
+}
+
+@mixin modal\apply() {
+  .modal {
+    display: none;
+  }
+
+  .modal-box-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    @include back-color\apply('modal.back-overlay');
+    opacity: 0.5;
+  }
+
+  .modal-box {
+    @include back-color\apply('modal.back');
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    opacity: 1.0;
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@include default-cards\apply();
+@include default-form\apply();

@@ -1,0 +1,20 @@
+//_global.scss -  used for import all settings
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+//functions
+@import 'functions/global';
+
+//mixins
+@import 'mixins/global';
+@import 'mixins/font';
+@import 'mixins/spacing';
+@import 'mixins/buttons';
+
+//contexts
+@import 'contexts/font';
+@import 'contexts/screenSize';
+@import 'contexts/spacing';
+@import 'contexts/color';
+@import 'contexts/buttons';

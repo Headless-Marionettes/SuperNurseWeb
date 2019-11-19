@@ -1,0 +1,18 @@
+//_font.scss -  contains mixin for spacing styles
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+//mixin for spacing (padding, margin), used a context from contexts files
+@mixin spacing\apply($context, $types, $sides) {
+  @each $type in $types { //for each type
+    @if type-of($sides) != 'list' and $sides == 'all' { //all sides
+      @include context-value\apply($context, $spacing-context, $spacing-palette, $type)
+
+    } @else {
+      @each $side in $sides { //for each side separate
+        @include context-value\apply($context, $spacing-context, $spacing-palette, '#{$type}-#{$side}')
+      }
+    }
+  }
+}

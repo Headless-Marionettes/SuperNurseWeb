@@ -1,0 +1,9 @@
+//_module.scss - used for import _patients-list-page.scss file
+//
+// Author:
+
+@import 'patient-profile-page';
+
+.patients-profile {
+  @include login-page\apply();
+}

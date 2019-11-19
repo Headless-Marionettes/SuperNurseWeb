@@ -1,0 +1,26 @@
+//_font.scss -  contains mixins for font/typography/text styles
+//
+// Author: Veronika Kotckovich
+// Student ID: 301067511
+
+
+//mixin for font size, used a context form contexts files
+@mixin font-size\apply($context) {
+  @include context-value\apply($context, $font-size-context, $font-size-palette, 'font-size');
+}
+
+//mixin for foreground color, used a context form contexts files
+@mixin front-color\apply($context) {
+  @include context-value\apply($context, $color-context, $color-palette, 'color');
+}
+
+//mixin for background color, used a context form contexts files
+@mixin back-color\apply($context) {
+  @include context-value\apply($context, $color-context, $color-palette, 'background-color');
+}
+
+//mixin for applying default typography files
+@mixin typography\apply() {
+  @include default-value\apply('typography', $font-size-context, $font-size-palette, 'font-size');
+  @include default-value\apply('typography', $color-context, $color-palette, 'color');
+}

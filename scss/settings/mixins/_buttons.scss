@@ -1,0 +1,39 @@
+//_button.scss -  contains mixin for button styles
+//
+// Author:
+
+
+@mixin buttons\apply(){
+  @each $key, $value in $buttons-context {
+    .#{$key} {
+      @include spacing\apply('primary-button', $types: ('padding'), $sides: ('all'));
+      @include spacing\apply('button-outer', $types: ('margin'), $sides: ('bottom'));
+      display: inline-block;
+      background-color: map_get($color-palette, map_get($value, 'back'));
+      color: map_get($color-palette, map_get($value, 'front'));
+      text-transform: uppercase;
+      border: rem-calc(3) solid map_get($color-palette, map_get($value, 'border'));
+      font-weight: 500;
+
+      &.disabled{
+        background-color: map_get($color-palette, map_get($value, 'disabled-back'));
+        color: map_get($color-palette, map_get($value, 'disabled-front'));
+        border-color:  map_get($color-palette, map_get($value, 'disabled-border'));
+
+        pointer-events: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:visited {
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: map_get($color-palette, map_get($value, 'hover-back'));
+        color: map_get($color-palette, map_get($value, 'hover-front'));
+        border-color:  map_get($color-palette, map_get($value, 'border-hover'));
+      }
+    }
+  }
+}
