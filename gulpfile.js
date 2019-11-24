@@ -86,4 +86,4 @@ gulp.task('processStyle', processStyle);
 
 gulp.task('watch', watch);
 
-gulp.task('default', gulp.series('processStyle', 'processJs', 'tst', gulp.parallel('serve', 'watch')));
+gulp.task('default', gulp.series('processStyle', 'tst', gulp.parallel('serve', 'watch')));

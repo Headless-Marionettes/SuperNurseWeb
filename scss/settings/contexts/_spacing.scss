@@ -46,7 +46,7 @@ $spacing-context: (
   ),
   'primary-button': (
     'small':'micro.md micro.lr',
-    'medium': 'micro.lr micro.xl'
+    'large': 'micro.lr micro.xl'
   ),
   'button-outer': (
     'small': 'micro.md',
@@ -74,12 +74,31 @@ $spacing-context: (
     'fieldset': (
       'small': 'micro.lr',
       'medium': 'base.sm',
-    )
+    ),
+    'error': 'micro.sm'
   ),
   'card': (
     'inner': (
       'small': 'micro.xl',
       'medium': 'micro.lr'
+    )
+  ),
+  'login': (
+    'box': (
+      'top': (
+        'small': 'base.sm',
+        'large': 'base.lr'
+      )
+    ),
+    'action': (
+      'small': 'micro.xxl',
+      'large': 'base.lr'
+    ),
+    'form': (
+      'small': 'micro.lr',
+      'medium': 'micro.lr',
+      'large': 'base.lr',
+      'xlarge': 'base.xxl'
     )
   )
 )

@@ -4,5 +4,79 @@
 // Author:
 
 @mixin login-page\apply() {
-  //TODO: put styles for login page here CSS and SASS format is OK
+  background-color: get-color('primary-light');
+
+  .wrapper-box {
+    box-shadow: 3px 2px 7px 2px get-color('light-grey');
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: get-color('white-second');
+    align-items: center;
+
+    @include spacing\apply('login.box.top', $types: ('padding', 'margin'), $sides: ('top'));
+  }
+
+  .logo-wrapper {
+    max-width: rem-calc(150);
+  }
+
+  form {
+    @include spacing\apply('login.form', $types: ('padding'), $sides: ('left', 'right'));
+    width: 100%;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+
+    > * {
+      flex: 0 0 50%;
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    order: -1;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-label {
+    position: absolute;
+    transform: translate(10px, 4px) scale(1);
+    color: get-color('grey');
+    font-weight: 300;
+  }
+
+  .form-control {
+    &:focus,
+    &:not(:placeholder-shown) {
+      + .form-label {
+        transform: translate(-12px, -7px) scale(.60);
+        color: get-color('primary-dark');
+        font-weight: 400;
+      }
+    }
+
+    &[type="password"] {
+      &:focus,
+      &:not(:placeholder-shown) {
+        + .form-label {
+          transform: translate(-6px, -7px) scale(.60);
+        }
+      }
+    }
+  }
+
+  .action {
+    @include spacing\apply('login.action', $types: ('margin'), $sides: ('top'));
+  }
 }

@@ -139,8 +139,11 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
   }
 
   .form-error-message {
+    @include spacing\apply('form.error', $types: ('margin'), $sides: ('bottom'));
     @include font-size\apply('form.error');
     @include front-color\apply('form.error');
+
+    display: block;
   }
 }
 
@@ -148,7 +151,7 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
   .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .card-wrapper {
     @include spacing\apply('card.inner', $types: ('padding'), $sides: ('all'));
