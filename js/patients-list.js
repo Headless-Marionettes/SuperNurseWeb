@@ -39,6 +39,6 @@ var load = function() {
             }
         }
     }).fail(function() {
-        $("#list_of_items").html("error");
+        $("#patients").html("error");
     })
 }
