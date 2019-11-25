@@ -6,6 +6,10 @@
     //TODO: put styles for patients list page here CSS and SASS format is OK
     .banner {
         text-align: center;
+        margin: rem-calc(20) 0;
+        @include media-query\apply('large') {
+            margin: rem-calc(50) 0;
+        }
     }
     .navbar {
         a,

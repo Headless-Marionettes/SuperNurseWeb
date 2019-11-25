@@ -1,3 +1,7 @@
+var load = function() {
+    window.localStorage.removeItem("token");
+}
+
 $("#sign-in-form").each(function() {
     var form = this;
     var ajax_form = $(this);
