@@ -29,13 +29,17 @@
                 <span class="form-error-message hidden">" "</span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="auth-group">
                 <div class="input-wrapper">
                     <input type="password" id="password" class="form-control focused" placeholder=" " aria-describedby="passwordHelpBlock" name="password" required>
                     <label for="password" class="form-label">Password</label>
                 </div>
                 <span class="form-error-message hidden">" "</span>
             </div>
+            <div class="invalid-feedback" align="center">
+                Authentication failed
+            </div>
+
             <div class="action">
                 <button type="submit" id="sign-in-button" class="primary-button">Login</button>
             </div>

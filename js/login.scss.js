@@ -46,6 +46,9 @@ $("#sign-in-form").each(function() {
                     // console.log(token);
                 }
             }).fail(function(data) {
+                var authGroup = document.getElementById('auth-group');
+                authGroup.nextElementSibling.style.display = "block";
+
                 console.log(data);
             });
 
