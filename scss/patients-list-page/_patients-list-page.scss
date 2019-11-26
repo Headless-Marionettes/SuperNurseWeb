@@ -12,10 +12,19 @@
         }
     }
     .navbar {
+        background-color: get-color('primary');
         a,
         li a {
             color: get-color('primary-light');
         }
-        background-color: get-color('primary');
+        .navbar-toggler {
+            display: block;
+            @include media-query\apply('large') {
+                display: none;
+            }
+        }
+        .hamburger-icon {
+            width: 32px;
+        }
     }
 }
