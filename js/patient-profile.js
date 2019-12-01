@@ -8,8 +8,12 @@ var load = function() {
         }
     });
 
+    var url = new URL(window.location.href);
+    var id = url.searchParams.get("id");
+    console.log(id);
+
     $.ajax({
-        url: "https://super-nurse.herokuapp.com/patients/5ddaf723792621001758fb8d",
+        url: "https://super-nurse.herokuapp.com/patients/" + id,
         action: "GET",
         context: document.body,
         crossDomain: true,
@@ -25,5 +29,8 @@ var load = function() {
         $("#patient-name").html("error");
         $("#patient-room").html("error");
         $("#patient-birth").html("error");
+        $("#patient-height").html("error");
+        $("#patient-weight").html("error");
+        $("#patient-allergies").html("error");
     })
 }
