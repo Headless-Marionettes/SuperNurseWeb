@@ -5,4 +5,20 @@
 
 @mixin patient-profile-page\apply() {
   //TODO: put styles for patients profile page here CSS and SASS format is OK
+
+  .profile-picture {
+    @include media-query\apply('small') {
+      width: 150px
+    }
+    @include media-query\apply('medium') {
+      width: 200px
+    }
+    @include media-query\apply('large') {
+      width: 300px
+    }
+  }
+
+  .patient-name {
+    color: get-color('primary-dark');
+  }
 }
