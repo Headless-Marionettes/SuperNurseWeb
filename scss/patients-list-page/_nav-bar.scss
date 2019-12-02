@@ -1,0 +1,70 @@
+@mixin search-nav-bar\apply() {
+  .navbar {
+    background-color: get-color('primary');
+
+    a,
+    li a {
+      color: get-color('primary-light');
+    }
+
+    .navbar-toggler {
+      display: block;
+      @include media-query\apply('large') {
+        display: none;
+      }
+    }
+
+    .hamburger-icon {
+      width: 32px;
+    }
+
+    .navbar-brand {
+      &.desktop {
+        display: none;
+        @include media-query\apply('large') {
+          display: inline-block;
+        }
+      }
+
+      &.mobile {
+        display: inline-block;
+        @include media-query\apply('large') {
+          display: none;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      justify-content: space-between;
+
+      margin-top: rem-calc(10);
+      @include media-query\apply('large') {
+        margin-top: rem-calc(0);
+      }
+    }
+
+    .btn-outline-secondary {
+      border-color: get-color('primary-light');
+
+      &:hover {
+        background: get-color('primary-dark');
+      }
+    }
+
+    .fa-search {
+      color: get-color('primary-light');
+    }
+
+    .navbar-nav {
+      margin-top: rem-calc(10);
+      @include media-query\apply('large') {
+        margin-top: rem-calc(0);
+      }
+
+      li {
+        margin-right: rem-calc(10);
+      }
+    }
+
+  }
+}

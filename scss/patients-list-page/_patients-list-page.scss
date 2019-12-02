@@ -3,28 +3,35 @@
 //
 // Author:
 @mixin patients-list-page\apply() {
-    //TODO: put styles for patients list page here CSS and SASS format is OK
-    .banner {
-        text-align: center;
-        margin: rem-calc(20) 0;
-        @include media-query\apply('large') {
-            margin: rem-calc(50) 0;
-        }
+  //TODO: put styles for patients list page here CSS and SASS format is OK
+  .banner {
+    text-align: center;
+    margin: rem-calc(20) 0;
+    @include media-query\apply('large') {
+      margin: rem-calc(50) 0;
     }
-    .navbar {
-        background-color: get-color('primary');
-        a,
-        li a {
-            color: get-color('primary-light');
-        }
-        .navbar-toggler {
-            display: block;
-            @include media-query\apply('large') {
-                display: none;
-            }
-        }
-        .hamburger-icon {
-            width: 32px;
-        }
-    }
+  }
+
+  .sticky-wrapper {
+    position: sticky;
+    top: 0;
+  }
+
+  .absolute-wrapper {
+    position: absolute;
+    height: 100%;
+  }
+
+  #sidebar-wrapper {
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 86.5%;
+    margin-left: -250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #000;
+    transition: all 0.5s ease;
+    width: 0px;
+  }
 }

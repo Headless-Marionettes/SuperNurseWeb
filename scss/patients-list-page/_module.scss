@@ -3,7 +3,11 @@
 // Author:
 
 @import 'patients-list-page';
+@import 'nav-bar';
 
 .patients-list {
+  position: relative;
+
+  @include search-nav-bar\apply();
   @include patients-list-page\apply();
 }
