@@ -6,22 +6,6 @@
 @mixin patient-profile-page\apply() {
   //TODO: put styles for patients profile page here CSS and SASS format is OK
 
-  .navbar {
-    background-color: get-color('primary');
-    a,
-    li a {
-        color: get-color('primary-light');
-    }
-    .navbar-toggler {
-        display: block;
-        @include media-query\apply('large') {
-            display: none;
-        }
-    }
-    .hamburger-icon {
-        width: 32px;
-    }
-}
 
   .profile-picture {
     display: inline-block;
