@@ -55,29 +55,134 @@
     <!-- </div> -->
 </nav>
 
-<h1 class="banner">All Patients</h1>
-<div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">Start Bootstrap </div>
-    <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+<div id="wrapper">
+    <h1 class="banner">All Patients</h1>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Start Bootstrap
+                </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+        </ul>
     </div>
-</div>
-<div class="absolute-wrapper">
-    <div class="sticky-wrapper">
-        <button  id="menu-toggle" class="btn btn-lg sticky-top btn-primary" type="button">star</button>
+    <div class="absolute-wrapper">
+        <div class="sticky-wrapper">
+            <button id="menu-toggle" class="btn btn-lg sticky-top btn-primary" type="button">star</button>
+        </div>
     </div>
-</div>
-<div class="container" id="page-content-wrapper">
-    <div class="cards" id="patients">
+    <div id="page-content-wrapper">
+<!--        <div class="container-fluid">-->
+            <div class="cards" id="patients">
+            </div>
+<!--        </div>-->
     </div>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/patients-list.js"></script>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+
+    $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
+    $("#wrapper").toggleClass("toggled");
+
+    if(isIE11){
+        if($("#wrapper").hasClass("toggled")){
+            $('#sidebar-wrapper').css("margin-left", "-268px")
+        } else {
+            $('#sidebar-wrapper').css("margin-left", "-250px")
+        }
+    }
+});
+</script>
 
 </html>

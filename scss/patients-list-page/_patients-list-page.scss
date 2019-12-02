@@ -32,6 +32,43 @@
     overflow-x: hidden;
     background: #000;
     transition: all 0.5s ease;
+  }
+
+
+  #wrapper {
+    padding-left: 250px;
+    transition: all 0.5s ease;
+  }
+
+  #wrapper.toggled {
+    padding-left: 0px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
     width: 0px;
   }
+
+
+  #page-content-wrapper {
+    width: auto;
+    position: absolute;
+    padding: 50px;
+  }
+
+
+  #wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+    width:100%;
+  }
+
+  #menu-toggle{
+    color:white;
+    position: absolute;
+    top: 46px;
+    left: -45.75px;
+    transform: rotate(90deg);
+    background: black;
+  }
+
 }
