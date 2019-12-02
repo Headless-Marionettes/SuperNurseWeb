@@ -6,19 +6,43 @@
 @mixin patient-profile-page\apply() {
   //TODO: put styles for patients profile page here CSS and SASS format is OK
 
+  .navbar {
+    background-color: get-color('primary');
+    a,
+    li a {
+        color: get-color('primary-light');
+    }
+    .navbar-toggler {
+        display: block;
+        @include media-query\apply('large') {
+            display: none;
+        }
+    }
+    .hamburger-icon {
+        width: 32px;
+    }
+}
+
   .profile-picture {
+    display: inline-block;
+    vertical-align: top;
     @include media-query\apply('small') {
-      width: 150px
+      width: 175px
     }
     @include media-query\apply('medium') {
-      width: 200px
+      width: 225px
     }
     @include media-query\apply('large') {
-      width: 300px
+      width: 275px
     }
   }
 
-  .patient-name {
+  .profile-text {
+    display: inline-block;
+    width: 46%;
+  }
+
+  #patient-name {
     color: get-color('primary-dark');
   }
 }
