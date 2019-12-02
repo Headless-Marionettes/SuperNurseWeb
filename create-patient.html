@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+        .user-info {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            flex: 0 0 30%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 0.0625rem solid #ccc;
+            box-shadow: 0 0 1rem rgba(33, 33, 33, .2);
+        }
+        
+        .creditCardForm {
+            margin-right: 1rem;
+            flex: 1;
+            min-width: 40%;
+        }
+        
+        .user-info label::after {
+            content: "*";
+            color: red;
+            margin-left: 2px
+        }
+        
+        .creditCardForm label::after {
+            content: "*";
+            color: red;
+            margin-left: 2px
+        }
+        
+        .info-with-navigation-bar {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navigation-bar {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .navigation-bar button {
+            margin-top: 2rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+        
+        .user-info {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <a class="navbar-brand" href="#">Super Nurse</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="./images/menu-button-of-three-horizontal-lines.png" alt="" class="hamburger-icon">
+            </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                                      <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./create-patient.html">Create patient</a></li>
+                <li><a href="./patients-list.html">View Patients</a></li>
+                <li><a href="./index.html">Log out</a></li>
+            </ul>
+        </div>
+        <!-- </div> -->
+    </nav>
+
+    <h1 class="banner">Create patient</h1>
+
+    <form id="userInfo" class="user-info" novalidate>
+        <div class="form-group">
+            <label for="patientFirstName">Patient first name</label>
+            <input type="text" class="form-control" id="patientFirstName" placeholder="Patient first name">
+            <div class="invalid-feedback">
+                Patient first name cannot be empty
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientLastName">Patient last name</label>
+            <input type="text" class="form-control" id="patientLastName" placeholder="Patient last name">
+            <div class="invalid-feedback">
+                Patient last name cannot be empty
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientHeight">Patient height</label>
+            <input type="text" class="form-control" id="patientHeight" placeholder="Patient height">
+            <div class="invalid-feedback">
+                Patient height cannot be empty
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientWeight">Patient weight</label>
+            <input type="text" class="form-control" id="patientWeight" placeholder="Patient weight">
+            <div class="invalid-feedback">
+                Patient weight cannot be empty
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientDateOfBirth">Patient date of birth</label>
+            <input type="text" class="form-control" id="patientDateOfBirth" placeholder="Patient date of birth">
+            <div class="invalid-feedback">
+                Patient date of birth cannot be empty
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientRoom">Patient room</label>
+            <input type="text" class="form-control" id="patientRoom" placeholder="Patient room">
+            <div class="invalid-feedback">
+                Patient room cannot be empty
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="patientAlergies">Patient alergies</label>
+            <input type="text" class="form-control" id="patientAlergies" placeholder="Patient alergies">
+        </div>
+
+        <div class="form-group">
+            <label for="patientBloodType">Patient blood type</label>
+            <input type="text" class="form-control" id="patientBloodType" placeholder="Patient blood type">
+            <div class="invalid-feedback">
+                Patient blood type cannot be empty
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="patientSex">Patient sex</label>
+            <input type="text" class="form-control" id="patientSex" placeholder="Patient sex">
+            <div class="invalid-feedback">
+                Patient sex cannot be empty
+            </div>
+        </div>
+    </form>
+
+    <button type="button" onclick="createPatient()">Create patient</button>
+</body>
+<script src="js/create-patient.js"></script>
+
+</html>
