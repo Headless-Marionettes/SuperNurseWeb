@@ -1,0 +1,9 @@
+//_module.scss - used for import _patients-list-page.scss file
+//
+// Author:
+@import 'create-patient-page';
+
+.create-patient-page {
+  @include nav-bar\apply();
+  @include create-patient-page\apply()
+}

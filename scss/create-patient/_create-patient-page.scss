@@ -1,0 +1,63 @@
+//_login-page.scss - contains scss styles for
+//login page, which will be converted to css
+//
+// Author: Ignat
+
+@mixin create-patient-page\apply() {
+  .user-info {
+    padding: rem-calc(16) rem-calc(16) rem-calc(16);
+    border-radius: rem-calc(8);
+    border: rem-calc(1) solid get-color('light-grey');
+    box-shadow: 0 0 1rem rgba(33, 33, 33, .2);
+  }
+
+  .form-wrapper{
+    @include spacing\apply('create-pat.form.outer', $types: ('padding'), $sides: ('right', 'left'));
+
+  }
+
+  h1{
+    margin: rem-calc(20) 0;
+    color: get-color('primary-dark');
+
+    @include media-query\apply('large') {
+      margin: rem-calc(30) 0;
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    order: -1;
+  }
+
+  .form-label {
+    position: absolute;
+    transform: translate(10px, 6px) scale(1);
+    color: get-color('grey');
+    font-weight: 300;
+  }
+
+  .form-control {
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      + .form-label {
+        transform: translate(0px, -7px) scale(.60);
+        color: get-color('primary-dark');
+        font-weight: 400;
+      }
+    }
+  }
+
+  .actions{
+    @include spacing\apply('create-pat.form.actions', $types: ('margin'), $sides: ('top'));
+
+
+    * {
+      @include media-query\apply('medium') {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

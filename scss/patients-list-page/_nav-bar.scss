@@ -1,4 +1,4 @@
-@mixin search-nav-bar\apply() {
+@mixin nav-bar\apply() {
   .navbar {
     background-color: get-color('primary');
     position: sticky;
@@ -48,18 +48,6 @@
       }
     }
 
-    .btn-outline-secondary {
-      border-color: get-color('primary-light');
-
-      &:hover {
-        background: get-color('primary-dark');
-      }
-    }
-
-    .fa-search {
-      color: get-color('primary-light');
-    }
-
     .navbar-nav {
       margin-top: rem-calc(10);
       @include media-query\apply('large') {
@@ -70,6 +58,22 @@
         margin-right: rem-calc(10);
       }
     }
+  }
+}
 
+
+@mixin search-nav-bar\apply() {
+  @include nav-bar\apply();
+
+  .btn-outline-secondary {
+    border-color: get-color('primary-light');
+
+    &:hover {
+      background: get-color('primary-dark');
+    }
+  }
+
+  .fa-search {
+    color: get-color('primary-light');
   }
 }

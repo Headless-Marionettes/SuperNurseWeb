@@ -105,5 +105,20 @@ $spacing-context: (
       'large': 'base.lr',
       'xlarge': 'base.xxl'
     )
+  ),
+  'create-pat': (
+    'form': (
+      'outer': (
+        'small': 'micro.xl',
+        'medium': 'base.sm',
+        'large': 'grand.xl',
+        'xlarge': 'xgrand.sm'
+      ),
+      'actions': (
+        'small': 'base.sm',
+        'large': 'base.xl',
+        'xlarge': 'grand.md'
+      )
+    )
   )
 )
