@@ -24,6 +24,7 @@ var load = function() {
                         <div class="content col-6 col-sm-12">
                             <p class="name subheading">${data[i].first_name + " " + data[i].last_name}</p>
                             <div class="details">
+<!--                                <div id="patientsId">${data[i]._id}</div>-->
                                 <div class="details-row">
                                     <p class="details-label">DOB: </p>
                                     <p class="details-value">${data[i].date_of_birth}</p>
