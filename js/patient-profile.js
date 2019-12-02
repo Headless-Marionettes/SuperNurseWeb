@@ -50,7 +50,7 @@ var load = function() {
                     <h3 class="text-dark-primary">Report from ${data[i].date}</h3>
                     <div class="row">
                         <div class="col-md font-weight-bold mt-4">Blood Pressure: ${data[i].blood_pressure}</div>
-                        <div class="col-md font-weight-bold mt-4">Respiratory: ${data[i].respiratory_rate}</div>
+                        <div class="col-md font-weight-bold mt-4">Respiratory Rate: ${data[i].respiratory_rate}</div>
                     </div>
                     <div class="row">
                         <div class="col-md font-weight-bold mt-4">Blood Oxygen: ${data[i].blood_oxygen_level}</div>

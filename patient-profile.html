@@ -51,6 +51,7 @@
                 <div class="profile-stat font-weight-bold">Allergies: <span class="font-weight-normal" id="patient-allergies"></span></div>
             </div>
         </div>
+
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#listReports">List Reports</a>
@@ -62,9 +63,36 @@
         <div class="tab-content">
             <div id="listReports" class="container tab-pane active overflow-auto"><br>
             </div>
-            <div id="postReport" class="container tab-pane fade"><br>
-                <h3>Menu 1</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div id="postReport" class="container tab-pane fade pb-4"><br>
+                <form>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="bloodPressure">Blood Pressure:</label>
+                            <input class="form-control" id="bloodPressure" placeholder="Enter blood pressure">
+                        </div>
+                        <div class="form-group col-md">
+                            <label for="respiratory">Respiratory Rate:</label>
+                            <input class="form-control" id="respiratory" placeholder="Enter respiratory rate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="bloodOxygen">Blood Oxygen Level:</label>
+                            <input class="form-control" id="bloodOxygen" placeholder="Enter blood oxygen level">
+                        </div>
+                        <div class="form-group col-md">
+                            <label for="heartBeat">Heart Beat Rate:</label>
+                            <input class="form-control" id="heartBeat" placeholder="Enter heart beat rate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="additionalInfo">Additional Information:</label>
+                            <input class="form-control" id="additionalInfo" placeholder="Enter additional information">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </div>
