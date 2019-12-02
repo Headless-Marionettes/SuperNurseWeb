@@ -24,13 +24,14 @@ var load = function() {
             $("#patient-height").html(data[0].height);
             $("#patient-weight").html(data[0].weight);
             $("#patient-allergies").html(data[0].alergies);
+        },
+        error: function() {
+            $("#patient-name").html("error");
+            $("#patient-room").html("error");
+            $("#patient-birth").html("error");
+            $("#patient-height").html("error");
+            $("#patient-weight").html("error");
+            $("#patient-allergies").html("error");
         }
-    }).fail(function() {
-        $("#patient-name").html("error");
-        $("#patient-room").html("error");
-        $("#patient-birth").html("error");
-        $("#patient-height").html("error");
-        $("#patient-weight").html("error");
-        $("#patient-allergies").html("error");
     })
 }

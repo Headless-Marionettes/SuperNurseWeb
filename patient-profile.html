@@ -11,27 +11,29 @@
 <link href="./css/styles.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 <script src="js/patient-profile.js"></script>
 </head>
+
 <body class="patients-profile" onload="load()">
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-md bg-blue navbar-dark">
+        <a class="navbar-brand text-white" href="#">Super Nurse</a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-white" href="#">Link</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-white" href="#">Link</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-white" href="#">Link</a>
             </li>
             </ul>
         </div>
@@ -41,12 +43,12 @@
         <div class="container">
             <img src="./images/oldman.jpg" alt="" class="p-2 profile-picture">
             <div class="profile-text">
-                <h2 id="patient-name" class="pt-2 pb-3 font-weight-bold">Patient name</h2>
-                <div class="pb-3 font-weight-bold">Room: <span class="font-weight-normal" id="patient-room"></span></div>
-                <div class="pb-3 font-weight-bold">Date of Birth: <span class="font-weight-normal" id="patient-birth"></span></div>
-                <div class="pb-3 font-weight-bold">Height: <span class="font-weight-normal" id="patient-height"></span></div>
-                <div class="pb-3 font-weight-bold">Weight: <span class="font-weight-normal" id="patient-weight"></span></div>
-                <div class="pb-3 font-weight-bold">Allergies: <span class="font-weight-normal" id="patient-allergies"></span></div>
+                <h2 id="patient-name" class="pt-1 font-weight-bold">Patient name</h2>
+                <div class="profile-stat font-weight-bold">Room: <span class="font-weight-normal" id="patient-room"></span></div>
+                <div class="profile-stat font-weight-bold">Date of Birth: <span class="font-weight-normal" id="patient-birth"></span></div>
+                <div class="profile-stat font-weight-bold">Height: <span class="font-weight-normal" id="patient-height"></span></div>
+                <div class="profile-stat font-weight-bold">Weight: <span class="font-weight-normal" id="patient-weight"></span></div>
+                <div class="profile-stat font-weight-bold">Allergies: <span class="font-weight-normal" id="patient-allergies"></span></div>
             </div>
         </div>
         <ul class="nav nav-tabs" role="tablist">
