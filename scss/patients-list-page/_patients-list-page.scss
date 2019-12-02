@@ -2,6 +2,30 @@
 //patients list page, which will be converted to css
 //
 // Author:
+
+@mixin accordion\apply {
+
+  .side-bar-heading {
+    padding-left: rem-calc(20);
+
+    h4 {
+      color: get-color('accent');
+    }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    i {
+      color: get-color('grey')
+    }
+  }
+}
+
+
 @mixin patients-list-page\apply() {
   //TODO: put styles for patients list page here CSS and SASS format is OK
   .banner {
@@ -14,7 +38,7 @@
 
   .sticky-wrapper {
     position: sticky;
-    top: 0;
+    top: rem-calc(70);
   }
 
   .absolute-wrapper {
@@ -23,14 +47,12 @@
   }
 
   #sidebar-wrapper {
-    position: fixed;
+    @include accordion\apply();
+
     left: 250px;
     width: 250px;
-    height: 86.5%;
+    height: auto;
     margin-left: -250px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background: #000;
     transition: all 0.5s ease;
   }
 
@@ -48,27 +70,49 @@
     width: 0px;
   }
 
-
-  #page-content-wrapper {
-    width: auto;
+  #menu-toggle {
+    color: white;
     position: absolute;
-    padding: 50px;
+    left: -40px;
+    top: -10px;
+    border-radius: 100px;
+    border-width: 0;
+    background: transparent;
+    transition: all 0.5s ease;
+
+    &:hover {
+      animation: rotation 5s infinite linear;
+    }
+
+    i {
+      font-size: 40px;
+      color: get-color('light-grey')
+    }
   }
 
+  #wrapper.toggled #menu-toggle {
+    left: 0;
 
-  #wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-    width:100%;
+    i {
+      color: get-color('accent')
+    }
   }
 
-  #menu-toggle{
-    color:white;
-    position: absolute;
-    top: 46px;
-    left: -45.75px;
-    transform: rotate(90deg);
-    background: black;
+  .add-gutters {
+    @include spacing\apply('gutters', $types: ('margin'), $sides: ('right', 'left'));
+    transition: all 0.5s ease;
   }
 
+  .container {
+    transition: all 0.5s ease;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 }

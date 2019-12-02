@@ -48,6 +48,11 @@ $spacing-context: (
     'small':'micro.md micro.lr',
     'large': 'micro.lr micro.xl'
   ),
+  'gutters': (
+    'small': 'micro.md',
+    'large': 'micro.lr',
+    'xlarge': 'micro.xl'
+  ),
   'button-outer': (
     'small': 'micro.md',
     'medium': 'micro.lr',

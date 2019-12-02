@@ -24,7 +24,7 @@
 </head>
 
 <body class="patients-list" onload="load()">
-<nav class="navbar navbar-dark navbar-expand-md">
+<nav class="navbar navbar-dark navbar-expand-md ">
     <a class="navbar-brand mobile" href="#">
         <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Super Nurse
@@ -54,135 +54,144 @@
     </div>
     <!-- </div> -->
 </nav>
-
+<h1 class="banner">All Patients</h1>
 <div id="wrapper">
-    <h1 class="banner">All Patients</h1>
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Start Bootstrap
-                </a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
+    <!--    class="toggled">-->
+    <div class="absolute-wrapper">
+        <div class="sticky-wrapper">
+            <div id="sidebar-wrapper">
+                <div class="side-bar-heading">
+                    <h4>FILTERS</h4>
+                </div>
+                <div id="accordion">
+                    <div class="card">
+                        <button id="headingOne" class="btn btn-sm card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span>FILTER</span>
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOnex" data-parent="#accordion">
+                            <div class="card-body" id="child1">
+                                <div id="accordion-inner">
+                                    <div class="card">
+                                        <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseSex" aria-expanded="true" aria-controls="collapseSex">
+                                            <span>SEX</span>
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="collapse show" id="collapseSex" data-parent="#accordion-inner">
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="defaultCheck1" checked>
+                                                        <label class="custom-control-label" for="defaultCheck1">
+                                                            Males
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="defaultCheck2" checked>
+                                                        <label class="custom-control-label" for="defaultCheck2">
+                                                            Females
+                                                        </label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseAge" aria-expanded="true" aria-controls="collapseAge">
+                                            <span>AGE</span>
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="collapse" id="collapseAge" data-parent="#accordion-inner">
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="age1" checked>
+                                                        <label class="custom-control-label" for="age1">
+                                                            < 60
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="age2" checked>
+                                                        <label class="custom-control-label" for="age2">
+                                                            60 - 70
+                                                        </label>
+                                                    </div>
 
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-
-        </ul>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="age3" checked>
+                                                        <label class="custom-control-label" for="age3">
+                                                            70 - 80
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="age4" checked>
+                                                        <label class="custom-control-label" for="age4">
+                                                            80 - 90
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="" id="age5" checked>
+                                                        <label class="custom-control-label" for="age5">
+                                                            90 >
+                                                        </label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <button id="headingTwo" class="btn btn-sm card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span>SORT</span>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                dsfs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="absolute-wrapper">
         <div class="sticky-wrapper">
-            <button id="menu-toggle" class="btn btn-lg sticky-top btn-primary" type="button">star</button>
+            <button id="menu-toggle" class="" type="button"><i class="fa fa-cog" aria-hidden="true"></i></button>
         </div>
     </div>
-    <div id="page-content-wrapper">
-<!--        <div class="container-fluid">-->
-            <div class="cards" id="patients">
-            </div>
-<!--        </div>-->
+    <div id="page-content-wrapper" class="add-gutters">
+        <div class="cards" id="patients">
+        </div>
     </div>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/patients-list.js"></script>
 <script>
-$("#menu-toggle").click(function(e) {
+$("#menu-toggle").click(function (e) {
     e.preventDefault();
     var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 
     $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
     $("#wrapper").toggleClass("toggled");
+    $('#page-content-wrapper').toggleClass("container");
+    $('#page-content-wrapper').toggleClass("add-gutters");
 
-    if(isIE11){
-        if($("#wrapper").hasClass("toggled")){
+    if (isIE11) {
+        if ($("#wrapper").hasClass("toggled")) {
             $('#sidebar-wrapper').css("margin-left", "-268px")
         } else {
             $('#sidebar-wrapper').css("margin-left", "-250px")
         }
     }
 });
-</script>
 
+$('.card-header').click(function () {
+    $(this).find('i').toggleClass('fa-plus fa-minus')
+});
+</script>
 </html>

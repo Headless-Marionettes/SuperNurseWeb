@@ -25,7 +25,7 @@ var load = function() {
                             <p class="name subheading">${data[i].first_name + " " + data[i].last_name}</p>
                             <div class="details">
                                 <div class="details-row">
-                                    <p class="details-label">Date of birth: </p>
+                                    <p class="details-label">DOB: </p>
                                     <p class="details-value">${data[i].date_of_birth}</p>
                                 </div>
                                 <div class="details-row">

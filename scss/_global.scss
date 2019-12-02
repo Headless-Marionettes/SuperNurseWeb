@@ -157,7 +157,6 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
     @include spacing\apply('card.inner', $types: ('padding'), $sides: ('all'));
 
     margin-bottom: 15px;
-
     flex: 1 1 100%;
     box-shadow: 1px 5px 10px get-color('light-grey');
 
@@ -170,27 +169,33 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
       margin: 0 5px 10px;
     }
 
-    @include media-query\apply('large') {
+    @include media-query\apply('xlarge') {
       flex: 0 0 calc(33% - 10px);
     }
 
-    @include media-query\apply('xlarge') {
+    @include media-query\apply('xxlarge') {
       flex: 0 0 calc(25% - 20px);
       margin: 0 10px 10px;
     }
 
-    @include media-query\apply('xxlarge') {
-      flex: 0 0 calc(20% - 20px);
-    }
+    //@include media-query\apply('xxlarge') {
+    //  flex: 0 0 calc(20% - 20px);
+    //}
 
     a {
       &:hover {
         @include front-color\apply('text-primary');
       }
     }
+
+    * {
+      transition: all 0.5s ease;
+    }
   }
 
   .card-link {
+    transition: all 0.5s ease;
+
     .details {
       display: table;
     }
