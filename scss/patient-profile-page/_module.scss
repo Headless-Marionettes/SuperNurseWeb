@@ -5,5 +5,6 @@
 @import 'patient-profile-page';
 
 .patients-profile {
+  @include nav-bar\apply();
   @include patient-profile-page\apply();
 }
