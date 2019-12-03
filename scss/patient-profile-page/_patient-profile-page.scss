@@ -5,4 +5,56 @@
 
 @mixin patient-profile-page\apply() {
   //TODO: put styles for patients profile page here CSS and SASS format is OK
+
+  .navbar {
+    background-color: get-color('primary');
+    a,
+    li a {
+        color: get-color('primary-light');
+    }
+  }
+
+  .profile-picture {
+    display: inline-block;
+    vertical-align: top;
+    @include media-query\apply('small') {
+      width: 175px
+    }
+    @include media-query\apply('medium') {
+      width: 225px
+    }
+    @include media-query\apply('large') {
+      width: 275px
+    }
+  }
+
+  .profile-text {
+    display: inline-block;
+    width: 46%;
+  }
+
+  .profile-stat {
+    @include media-query\apply('small') {
+      margin-top: 0.1rem;
+    }
+    @include media-query\apply('medium') {
+      margin-top: 0.65rem;
+    }
+    @include media-query\apply('large') {
+      margin-top: 1rem;
+    }
+  }
+
+  #patient-name {
+    color: get-color('primary-dark');
+  }
+
+  .text-dark-primary {
+    color: get-color('primary-dark');
+  }
+
+  #listReports {
+    min-height: 100px;
+    max-height: 500px;
+  }
 }

@@ -5,5 +5,5 @@
 @import 'patient-profile-page';
 
 .patients-profile {
-  @include login-page\apply();
+  @include patient-profile-page\apply();
 }

@@ -4,15 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Super Nurse | Patient Profile</title>
-<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
-<link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link href="./css/styles.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script src="js/patient-profile.js"></script>
 </head>
-<body class="patients-profile container">
 
+<body class="patients-profile" onload="load()">
+
+    <nav class="navbar navbar-expand-md bg-blue navbar-dark">
+        <a class="navbar-brand text-white" href="#">Super Nurse</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Link</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container bg-white shadow">
+        <div class="container">
+            <img src="./images/oldman.jpg" alt="" class="p-2 mr-3 profile-picture">
+            <div class="profile-text">
+                <h2 id="patient-name" class="pt-1 font-weight-bold">Patient name</h2>
+                <div class="profile-stat font-weight-bold">Room: <span class="font-weight-normal" id="patient-room"></span></div>
+                <div class="profile-stat font-weight-bold">Date of Birth: <span class="font-weight-normal" id="patient-birth"></span></div>
+                <div class="profile-stat font-weight-bold">Height: <span class="font-weight-normal" id="patient-height"></span></div>
+                <div class="profile-stat font-weight-bold">Weight: <span class="font-weight-normal" id="patient-weight"></span></div>
+                <div class="profile-stat font-weight-bold">Allergies: <span class="font-weight-normal" id="patient-allergies"></span></div>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#listReports">List Reports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#postReport">New Report</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="listReports" class="container tab-pane active overflow-auto"><br>
+            </div>
+            <div id="postReport" class="container tab-pane fade pb-4"><br>
+                <form>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="bloodPressure">Blood Pressure:</label>
+                            <input class="form-control" id="bloodPressure" placeholder="Enter blood pressure">
+                        </div>
+                        <div class="form-group col-md">
+                            <label for="respiratory">Respiratory Rate:</label>
+                            <input class="form-control" id="respiratory" placeholder="Enter respiratory rate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="bloodOxygen">Blood Oxygen Level:</label>
+                            <input class="form-control" id="bloodOxygen" placeholder="Enter blood oxygen level">
+                        </div>
+                        <div class="form-group col-md">
+                            <label for="heartBeat">Heart Beat Rate:</label>
+                            <input class="form-control" id="heartBeat" placeholder="Enter heart beat rate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <label for="additionalInfo">Additional Information:</label>
+                            <input class="form-control" id="additionalInfo" placeholder="Enter additional information">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

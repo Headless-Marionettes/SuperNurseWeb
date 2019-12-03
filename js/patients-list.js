@@ -17,7 +17,7 @@ var load = function() {
             for (var i = 0; i < data.length; i++) {
                 $('#patients').append(
                     `<div class="card-wrapper">
-                    <a class="card-link row" href="#">
+                    <a class="card-link row" href="patient-profile.html?id=${data[i]._id}">
                         <div class="image-wraper col-6 col-sm-12">
                             <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
                         </div>
