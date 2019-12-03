@@ -43,6 +43,8 @@ var load = function() {
     })
 }
 
+
+
 var searchPatient = function() {
     var request = $("#search-input").val()
 
@@ -56,3 +58,7 @@ var searchPatient = function() {
         }
     });
 }
+
+$('#search-input').on('input', function(e) {
+    searchPatient()
+});
