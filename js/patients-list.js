@@ -26,11 +26,11 @@ var load = function() {
                             <div class="details">
                                 <div class="details-row">
                                     <p class="details-label">DOB: </p>
-                                    <p class="details-value">${data[i].date_of_birth}</p>
+                                    <p id="DateOfBirth" class="details-value">${data[i].date_of_birth}</p>
                                 </div>
                                 <div class="details-row">
                                     <p class="details-label">Room: </p>
-                                    <p class="details-value">${data[i].room}</p>
+                                    <p id="Room" class="details-value">${data[i].room}</p>
                                 </div>
                             </div>
                         </div>
@@ -43,15 +43,17 @@ var load = function() {
     })
 }
 
-
-
 var searchPatient = function() {
     var request = $("#search-input").val()
 
     $('.card-wrapper').each(function(i, obj) {
         var fullName = obj.querySelector("#FullNameID").innerHTML;
+        var dateOfBirth = obj.querySelector("#DateOfBirth").innerHTML;
+        var room = obj.querySelector("#Room").innerHTML;
 
-        if (fullName.includes(request)) {
+        if (fullName.includes(request) ||
+            dateOfBirth.includes(request) ||
+            room.includes(request)) {
             obj.style.display = "block"
         } else {
             obj.style.display = "none"
