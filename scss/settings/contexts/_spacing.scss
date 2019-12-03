@@ -50,8 +50,9 @@ $spacing-context: (
   ),
   'gutters': (
     'small': 'micro.md',
-    'large': 'micro.lr',
-    'xlarge': 'micro.xl'
+    'medium': 'base.xl',
+    'xlarge': 'base.xxl',
+    'xxlarge': 'grand.md',
   ),
   'button-outer': (
     'small': 'micro.md',
