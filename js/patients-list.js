@@ -22,9 +22,8 @@ var load = function() {
                             <img src="./images/senior-placeholder.jpg" alt="" class="img-fluid">
                         </div>
                         <div class="content col-6 col-sm-12">
-                            <p class="name subheading">${data[i].first_name + " " + data[i].last_name}</p>
+                            <p id="FullNameID" class="name subheading">${data[i].first_name + " " + data[i].last_name}</p>
                             <div class="details">
-<!--                                <div id="patientsId">${data[i]._id}</div>-->
                                 <div class="details-row">
                                     <p class="details-label">DOB: </p>
                                     <p class="details-value">${data[i].date_of_birth}</p>
@@ -42,4 +41,18 @@ var load = function() {
     }).fail(function() {
         $("#patients").html("error");
     })
+}
+
+var searchPatient = function() {
+    var request = $("#search-input").val()
+
+    $('.card-wrapper').each(function(i, obj) {
+        var fullName = obj.querySelector("#FullNameID").innerHTML;
+
+        if (fullName.includes(request)) {
+            obj.style.display = "block"
+        } else {
+            obj.style.display = "none"
+        }
+    });
 }
