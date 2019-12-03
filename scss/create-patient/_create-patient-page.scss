@@ -1,7 +1,7 @@
-//_login-page.scss - contains scss styles for
+//_create-patient-page.scss - contains scss styles for
 //login page, which will be converted to css
 //
-// Author: Ignat
+// Author: Ignat Pechurenko
 
 @mixin create-patient-page\apply() {
   .user-info {
@@ -48,6 +48,10 @@
         font-weight: 400;
       }
     }
+  }
+
+  .form-group {
+    margin: 0;
   }
 
   .actions{

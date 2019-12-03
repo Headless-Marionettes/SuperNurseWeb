@@ -145,6 +145,10 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
 
     display: block;
   }
+
+  .hidden {
+    visibility: hidden;
+  }
 }
 
 @mixin default-cards\apply() {
