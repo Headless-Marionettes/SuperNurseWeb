@@ -68,3 +68,62 @@ var load = function() {
         }
     })
 }
+
+$("#new-report-form").ready(function() {
+    $("#new-report-form").submit(function(e) {
+        e.preventDefault();
+
+        $.ajaxSetup({
+            beforeSend: function(request) {
+                console.log("before send")
+                var token = "JWT " + window.localStorage.getItem("token");
+                console.log(token)
+                request.setRequestHeader("Authorization", token);
+            }
+        });
+
+        var reportJson = {
+            blood_pressure: $("#bloodPressure").val(),
+        }
+        
+        var url = new URL(window.location.href);
+        var id = url.searchParams.get("id");
+
+        var url = "https://super-nurse.herokuapp.com/patients/" + id + "/records";
+        console.log(url);
+
+        var ajax_form = $(this);
+        var reportJson = ajax_form.serialize();
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        if(dd<10) 
+        {
+            dd='0'+dd;
+        } 
+        
+        if(mm<10) 
+        {
+            mm='0'+mm;
+        } 
+        today = dd+'/'+mm+'/'+yyyy;
+        console.log(today);
+
+        reportJson += "&date=" + today
+        console.log(reportJson)
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: reportJson,
+            success: function(data) {
+                console.log("Report added")
+            },
+            error: function() {
+                console.log("Error adding report")
+            }
+        })
+    });
+})
