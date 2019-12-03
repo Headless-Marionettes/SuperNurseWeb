@@ -44,16 +44,16 @@ var load = function() {
 }
 
 var searchPatient = function() {
-    var request = $("#search-input").val()
+    var request = $("#search-input").val().toLowerCase()
 
     $('.card-wrapper').each(function(i, obj) {
         var fullName = obj.querySelector("#FullNameID").innerHTML;
         var dateOfBirth = obj.querySelector("#DateOfBirth").innerHTML;
         var room = obj.querySelector("#Room").innerHTML;
 
-        if (fullName.includes(request) ||
-            dateOfBirth.includes(request) ||
-            room.includes(request)) {
+        if (fullName.toLowerCase().includes(request) ||
+            dateOfBirth.toLowerCase().includes(request) ||
+            room.toLowerCase().includes(request)) {
             obj.style.display = "block"
         } else {
             obj.style.display = "none"
