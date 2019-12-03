@@ -44,7 +44,7 @@ var load = function() {
             if (data.length == 0) {
                 $('#listReports').append(`<h2>There are no reports</h2>`)
             }
-            for (var i = 0; i < data.length; i++) {
+            for (var i = data.length - 1; i >= 0; i--) {
                 $('#listReports').append(
                 `<div class="shadow border rounded p-3 mb-3">
                     <h3 class="text-dark-primary">Report from ${data[i].date}</h3>
@@ -81,10 +81,6 @@ $("#new-report-form").ready(function() {
                 request.setRequestHeader("Authorization", token);
             }
         });
-
-        var reportJson = {
-            blood_pressure: $("#bloodPressure").val(),
-        }
         
         var url = new URL(window.location.href);
         var id = url.searchParams.get("id");
@@ -120,6 +116,7 @@ $("#new-report-form").ready(function() {
             data: reportJson,
             success: function(data) {
                 console.log("Report added")
+                location.reload();
             },
             error: function() {
                 console.log("Error adding report")
