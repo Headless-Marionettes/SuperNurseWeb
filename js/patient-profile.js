@@ -57,7 +57,7 @@ var load = function() {
                         <div class="col-md font-weight-bold mt-4">Heart Beat Rate: ${data[i].heart_beat_rate}</div>
                     </div>
                     <div class="row">
-                        <div class="col-md font-weight-bold mt-4">Additional Information: </div>
+                        <div class="col-md font-weight-bold mt-4">Additional Information: ${data[i].additional_info}</div>
                     </div>
                 </div>`
                 )
