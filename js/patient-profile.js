@@ -105,8 +105,6 @@ $("#new-report-form").ready(function() {
             mm='0'+mm;
         } 
         today = dd+'/'+mm+'/'+yyyy;
-        console.log(today);
-
         reportJson += "&date=" + today
         console.log(reportJson)
 
