@@ -43,45 +43,33 @@
         <h1>Create patient</h1>
 
         <div class="container form-wrapper">
-            <form id="userInfo" class="user-info" novalidate>
+            <form id="new-patient-form" class="user-info">
                 <div class="three-col-fields">
                     <div class="form-group">
                         <div class="input-wrapper">
-                            <input type="text" class="form-control" id="patientFirstName" placeholder=" ">
+                            <input type="text" class="form-control" id="patientFirstName" placeholder=" " required>
                             <label for="patientFirstName" class="form-label required">First Name</label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Patient first name cannot be empty
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-wrapper">
-                            <input type="text" class="form-control" id="patientLastName" placeholder=" ">
+                            <input type="text" class="form-control" id="patientLastName" placeholder=" " required>
                             <label for="patientLastName" class="form-label required">Last Name</label>
-                        </div>
-                        <div class="invalid-feedback">
-                            Patient last name cannot be empty
                         </div>
                     </div>
 
                     <div class="two-col-fields">
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientSex" placeholder=" ">
+                                <input type="text" class="form-control" id="patientSex" placeholder=" " pattern="M|F" oninvalid="this.setCustomValidity('Sex should be M or F')" oninput="setCustomValidity('')" required>
                                 <label for="patientSex" class="form-label required">Sex</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient sex cannot be empty
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientRoom" placeholder=" ">
+                                <input type="number" class="form-control" id="patientRoom" placeholder=" " required>
                                 <label for="patientRoom" class="form-label required">Room</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient room cannot be empty
                             </div>
                         </div>
                     </div>
@@ -91,40 +79,27 @@
                     <div class="two-col-fields">
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientHeight" placeholder=" ">
-                                <label for="patientHeight" class="form-label required">Height</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient height cannot be empty
+                                <input type="number" class="form-control" id="patientHeight" placeholder=" " required>
+                                <label for="patientHeight" class="form-label required">Height (cm)</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientWeight" placeholder=" ">
-                                <label for="patientWeight" class="form-label required">Weight</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient weight cannot be empty
+                                <input type="number" class="form-control" id="patientWeight" placeholder=" " required>
+                                <label for="patientWeight" class="form-label required">Weight (kg)</label>
                             </div>
                         </div>
                     </div>
                     <div class="two-col-fields">
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientBloodType" placeholder=" ">
+                                <input type="text" class="form-control" id="patientBloodType" placeholder=" " pattern='^(A|B|AB|O)[-+]$' required>
                                 <label for="patientBloodType" class="form-label required">Blood T.</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient blood type cannot be empty
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientDateOfBirth" placeholder=" ">
-                                <label for="patientDateOfBirth" class="form-label required">DOB</label>
-                            </div>
-                            <div class="invalid-feedback">
-                                Patient date of birth cannot be empty
+                                <input type="date" class="form-control" id="patientDateOfBirth" placeholder=" " required>
                             </div>
                         </div>
                     </div>
@@ -138,7 +113,7 @@
                 </div>
 
                 <div class="two-col-fields actions">
-                    <button type="button" id="submit-button" class="primary-button" onclick="createPatient()">Submit</button>
+                    <button type="submit" id="submit-button" class="primary-button">Submit</button>
                     <button type="reset" class="secondary-button">Reset</button>
                 </div>
             </form>

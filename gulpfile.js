@@ -78,7 +78,7 @@ gulp.task('tst', tst);
 
 gulp.task('serve', serve);
 
-gulp.task('processJs', processJs);
+// gulp.task('processJs', processJs);
 
 gulp.task('processStyle', processStyle);
 
