@@ -46,7 +46,7 @@ var load = function() {
             }
             for (var i = data.length - 1; i >= 0; i--) {
                 $('#listReports').append(
-                `<div class="shadow border rounded p-3 mb-3">
+                    `<div class="shadow border rounded p-3 mb-3">
                     <h3 class="text-dark-primary">Report from ${data[i].date}</h3>
                     <div class="row">
                         <div class="col-md font-weight-bold mt-4">Blood Pressure: ${data[i].blood_pressure}</div>
@@ -81,7 +81,7 @@ $("#new-report-form").ready(function() {
                 request.setRequestHeader("Authorization", token);
             }
         });
-        
+
         var url = new URL(window.location.href);
         var id = url.searchParams.get("id");
 
@@ -93,18 +93,16 @@ $("#new-report-form").ready(function() {
 
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth()+1; 
+        var mm = today.getMonth() + 1;
         var yyyy = today.getFullYear();
-        if(dd<10) 
-        {
-            dd='0'+dd;
-        } 
-        
-        if(mm<10) 
-        {
-            mm='0'+mm;
-        } 
-        today = dd+'/'+mm+'/'+yyyy;
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = dd + '/' + mm + '/' + yyyy;
         reportJson += "&date=" + today
         console.log(reportJson)
 
