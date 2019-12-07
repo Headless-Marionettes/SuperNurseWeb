@@ -1,4 +1,13 @@
 var load = function() {
+
+    var currentLanguage = window.localStorage.getItem("language")
+
+    if (currentLanguage == "ru") {
+        $('[lang="en"]').hide();
+    } else {
+        $('[lang="ru"]').hide();
+    }
+
     $.ajaxSetup({
         beforeSend: function(request) {
             console.log("before send")
@@ -61,7 +70,12 @@ var load = function() {
                     </div>
                 </div>`
                 )
-                $('[lang="ru"]').hide();
+
+                if (currentLanguage == "ru") {
+                    $('[lang="en"]').hide();
+                } else {
+                    $('[lang="ru"]').hide();
+                }
             }
         },
         error: function() {

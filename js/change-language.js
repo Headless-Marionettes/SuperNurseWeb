@@ -1,9 +1,13 @@
-function switchLang(){
-    $('[lang="ru"]').toggle();
-    $('[lang="en"]').toggle();
-}
+function switchLang() {
+    var currentLanguage = window.localStorage.getItem("language")
 
-function loadLang(){
-    $('[lang="ru"]').hide();
-    console.log("load")
+    if (currentLanguage == "ru") {
+        window.localStorage.setItem("language", "en");
+        $('[lang="ru"]').hide();
+        $('[lang="en"]').show();
+    } else {
+        window.localStorage.setItem("language", "ru");
+        $('[lang="en"]').hide();
+        $('[lang="ru"]').show();
+    }
 }

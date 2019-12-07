@@ -43,6 +43,8 @@ $("#sign-in-form").each(function() {
                     let token = data.token;
                     window.localStorage.setItem("token", token);
                     window.location.href = "./patients-list.html";
+
+                    window.localStorage.setItem("language", "en");
                     // console.log(token);
                 }
             }).fail(function(data) {

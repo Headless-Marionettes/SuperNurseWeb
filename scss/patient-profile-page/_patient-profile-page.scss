@@ -2,51 +2,64 @@
 //patient profile page, which will be converted to css
 //
 // Author:
-
 @mixin patient-profile-page\apply() {
-  //TODO: put styles for patients profile page here CSS and SASS format is OK
-
-  .profile-picture {
-    display: inline-block;
-    vertical-align: top;
-    @include media-query\apply('small') {
-      width: 175px
+    //TODO: put styles for patients profile page here CSS and SASS format is OK
+    .profile-picture {
+        vertical-align: top;
+        @include media-query\apply('small') {
+            width: 175px
+        }
+        @include media-query\apply('medium') {
+            width: 225px
+        }
+        @include media-query\apply('large') {
+            width: 275px
+        }
     }
-    @include media-query\apply('medium') {
-      width: 225px
+    .profile-text {
+        display: inline-block;
+        width: 46%;
     }
-    @include media-query\apply('large') {
-      width: 275px
+    .profile-stat {
+        @include media-query\apply('small') {
+            margin-top: 0.1rem;
+        }
+        @include media-query\apply('medium') {
+            margin-top: 0.65rem;
+        }
+        @include media-query\apply('large') {
+            margin-top: 1rem;
+        }
     }
-  }
-
-  .profile-text {
-    display: inline-block;
-    width: 46%;
-  }
-
-  .profile-stat {
-    @include media-query\apply('small') {
-      margin-top: 0.1rem;
+    #patient-name {
+        color: get-color('primary-dark');
     }
-    @include media-query\apply('medium') {
-      margin-top: 0.65rem;
+    .text-dark-primary {
+        color: get-color('primary-dark');
     }
-    @include media-query\apply('large') {
-      margin-top: 1rem;
+    #listReports {
+        min-height: 100px;
+        max-height: 500px;
     }
-  }
-
-  #patient-name {
-    color: get-color('primary-dark');
-  }
-
-  .text-dark-primary {
-    color: get-color('primary-dark');
-  }
-
-  #listReports {
-    min-height: 100px;
-    max-height: 500px;
-  }
+    .input-wrapper {
+        position: relative;
+        display: flex;
+        order: -1;
+    }
+    .form-label {
+        position: absolute;
+        transform: translate(10px, 6px) scale(1);
+        color: get-color('grey');
+        font-weight: 300;
+    }
+    .form-control {
+        &:focus,
+        &:not(:placeholder-shown) {
+            +.form-label {
+                transform: translate(0px, -7px) scale(.60);
+                color: get-color('primary-dark');
+                font-weight: 400;
+            }
+        }
+    }
 }
