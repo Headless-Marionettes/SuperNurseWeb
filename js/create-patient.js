@@ -1,6 +1,26 @@
+var load = function() {
+
+    var currentLanguage = window.localStorage.getItem("language")
+
+    if (currentLanguage == "ru") {
+        $('[lang="en"]').hide();
+    } else {
+        $('[lang="ru"]').hide();
+    }
+}
+
+
 $("#new-patient-form").ready(function() {
     $("#new-patient-form").submit(function(e) {
         e.preventDefault();
+
+        var currentLanguage = window.localStorage.getItem("language")
+
+        if (currentLanguage == "ru") {
+            $('[lang="en"]').hide();
+        } else {
+            $('[lang="ru"]').hide();
+        }
 
         console.log("submit button clicked")
 
