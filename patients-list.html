@@ -1,219 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Super Nurse | Patients List</title>
-<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
-<link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Nurse | Patients List</title>
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
+    <link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
 
-<link href="./css/styles.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!--    <script src="js/bootstrap.js"></script>-->
-<script src="js/bootstrap.bundle.js"></script>
+    <!--    <script src="js/bootstrap.js"></script>-->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/change-language.js"></script>
 
 </head>
 
 <body class="patients-list" onload="load()">
-<nav class="navbar navbar-dark navbar-expand-md ">
-    <a class="navbar-brand mobile" href="#">
-        <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
-    </a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
-        <a class="navbar-brand desktop" href="#">
+    <nav class="navbar navbar-dark navbar-expand-md ">
+        <a class="navbar-brand mobile" href="#">
             <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
         </a>
-        <form class="navbar-form col-12 col-md-5">
-            <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" id="search-input">
-                <span class="input-group-append">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
+            <a class="navbar-brand desktop" href="#">
+                <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
+            </a>
+            <form class="navbar-form col-12 col-md-5">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" id="search-input">
+                    <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" onclick="searchPatient()">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>
-            </div>
-        </form>
-        <ul class="nav navbar-nav">
-            <li><a href="./create-patient.html">Create Patient</a></li>
-            <li><a href="./index.html">Log out</a></li>
-        </ul>
-    </div>
-</nav>
-<h1 class="banner">All Patients</h1>
-<div id="wrapper" class="toggled">
-    <div class="absolute-wrapper">
-        <div class="sticky-wrapper">
-            <div id="sidebar-wrapper">
-                <div class="side-bar-heading">
-                    <h4>FILTERS</h4>
                 </div>
-                <div id="accordion">
-                    <div class="card">
-                        <button id="headingOne" class="btn btn-sm card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span>FILTER</span>
+            </form>
+            <ul class="nav navbar-nav">
+                <li><button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button></li>
+                <li><a href="./create-patient.html"><span lang="en">Create Patient</span><span lang="ru">Доб. пациента</span></a></li>
+                <li><a href="./index.html"><span lang="en">Log out</span><span lang="ru">Выйти</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="banner"><span lang="en">All patients</span><span lang="ru">Пациенты</span></h1>
+    <div id="wrapper" class="toggled">
+        <div class="absolute-wrapper">
+            <div class="sticky-wrapper">
+                <div id="sidebar-wrapper">
+                    <div class="side-bar-heading">
+                        <h4><span lang="en">FILTERS</span><span lang="ru">ФИЛЬТРЫ</span></h4>
+                    </div>
+                    <div id="accordion">
+                        <div class="card">
+                            <button id="headingOne" class="btn btn-sm card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span lang="en">FILTER</span><span lang="ru">ФИЛЬТР</span>
                             <i class="fa fa-minus" aria-hidden="true"></i>
                         </button>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOnex" data-parent="#accordion">
-                            <form id="filters">
-                                <div class="card-body" id="child1">
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOnex" data-parent="#accordion">
+                                <form id="filters">
+                                    <div class="card-body" id="child1">
 
-                                    <div id="accordion-inner">
-                                        <div class="card">
-                                            <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseSex" aria-expanded="true" aria-controls="collapseSex">
-                                                <span>SEX</span>
+                                        <div id="accordion-inner">
+                                            <div class="card">
+                                                <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseSex" aria-expanded="true" aria-controls="collapseSex">
+                                                        <span lang="en">SEX</span><span lang="ru">ПОЛ</span>
                                                 <i class="fa fa-minus" aria-hidden="true"></i>
                                             </button>
-                                            <div class="collapse show" id="collapseSex" data-parent="#accordion-inner">
-                                                <div class="card-body">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="male" checked>
-                                                        <label class="custom-control-label" for="male">
-                                                            Males
+                                                <div class="collapse show" id="collapseSex" data-parent="#accordion-inner">
+                                                    <div class="card-body">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="male" checked>
+                                                            <label class="custom-control-label" for="male">
+                                                                    <span lang="en">Males</span><span lang="ru">Мужчины</span>
                                                         </label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="female" checked>
-                                                        <label class="custom-control-label" for="female">
-                                                            Females
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="female" checked>
+                                                            <label class="custom-control-label" for="female">
+                                                                    <span lang="en">Females</span><span lang="ru">Женщины</span>   
                                                         </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseAge" aria-expanded="true" aria-controls="collapseAge">
-                                                <span>AGE</span>
+                                            <div class="card">
+                                                <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseAge" aria-expanded="true" aria-controls="collapseAge">
+                                                <span lang="en">AGE</span><span lang="ru">ВОЗРАСТ</span>
                                                 <i class="fa fa-minus" aria-hidden="true"></i>
                                             </button>
-                                            <div class="collapse" id="collapseAge" data-parent="#accordion-inner">
-                                                <div class="card-body">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="age1" checked>
-                                                        <label class="custom-control-label" for="age1">
-                                                            < 60
+                                                <div class="collapse" id="collapseAge" data-parent="#accordion-inner">
+                                                    <div class="card-body">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="age1" checked>
+                                                            <label class="custom-control-label" for="age1">
+                                                             < 60
                                                         </label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="age2" checked>
-                                                        <label class="custom-control-label" for="age2">
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="age2" checked>
+                                                            <label class="custom-control-label" for="age2">
                                                             60 - 70
                                                         </label>
-                                                    </div>
+                                                        </div>
 
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="age3" checked>
-                                                        <label class="custom-control-label" for="age3">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="age3" checked>
+                                                            <label class="custom-control-label" for="age3">
                                                             70 - 80
                                                         </label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="age4" checked>
-                                                        <label class="custom-control-label" for="age4">
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="age4" checked>
+                                                            <label class="custom-control-label" for="age4">
                                                             80 - 90
                                                         </label>
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input class="custom-control-input" type="checkbox" value="" id="age5" checked>
-                                                        <label class="custom-control-label" for="age5">
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" value="" id="age5" checked>
+                                                            <label class="custom-control-label" for="age5">
                                                             90 >
                                                         </label>
+                                                        </div>
+                                                        <!--                                                    </form>-->
                                                     </div>
-                                                    <!--                                                    </form>-->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <button id="headingTwo" class="btn btn-sm card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <span>SORT</span>
+                        <div class="card">
+                            <button id="headingTwo" class="btn btn-sm card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span lang="en">SORT</span><span lang="ru">СОРТ</span><span></span>
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </button>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <form id="sort">
-                                <div class="card-body">
-                                    <div class="custom-control radio">
-                                        <input class="radio"  type="radio" value="" id="sort-fn-asc" name="sorting-group">
-                                        <label class="" for="sort-fn-asc">
-                                            Fist Name ASC
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <form id="sort">
+                                    <div class="card-body">
+                                        <div class="custom-control radio">
+                                            <input class="radio" type="radio" value="" id="sort-fn-asc" name="sorting-group">
+                                            <label class="" for="sort-fn-asc">
+                                                    <span lang="en">Fist Name ASC</span><span lang="ru">Имя по возр.</span>
                                         </label>
-                                    </div>
-                                    <div class="custom-control radio">
-                                        <input class="radio" type="radio" value="" id="sort-fn-desc" name="sorting-group">
-                                        <label class="" for="sort-fn-desc">
-                                            Fist Name DESC
+                                        </div>
+                                        <div class="custom-control radio">
+                                            <input class="radio" type="radio" value="" id="sort-fn-desc" name="sorting-group">
+                                            <label class="" for="sort-fn-desc">
+                                                    <span lang="en">Fist Name DESC</span><span lang="ru">Имя по убыв.</span>
                                         </label>
-                                    </div>
-                                    <div class="custom-control radio">
-                                        <input class="radio" type="radio" value="" id="sort-ln-asc" name="sorting-group">
-                                        <label class="" for="sort-ln-asc">
-                                            Last Name ASC
+                                        </div>
+                                        <div class="custom-control radio">
+                                            <input class="radio" type="radio" value="" id="sort-ln-asc" name="sorting-group">
+                                            <label class="" for="sort-ln-asc">
+                                                    <span lang="en">Last Name ASC</span><span lang="ru">Фамилия по возр.</span>
                                         </label>
-                                    </div>
-                                    <div class="custom-control radio">
-                                        <input class="radio" type="radio" value="" id="sort-ln-desc" name="sorting-group">
-                                        <label class="" for="sort-ln-desc">
-                                            Last Name DESC
+                                        </div>
+                                        <div class="custom-control radio">
+                                            <input class="radio" type="radio" value="" id="sort-ln-desc" name="sorting-group">
+                                            <label class="" for="sort-ln-desc">
+                                                    <span lang="en">Last Name DESC</span><span lang="ru">Фамилия по убыв.</span>
                                         </label>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="absolute-wrapper">
-        <div class="sticky-wrapper">
-            <button id="menu-toggle" class="" type="button"><i class="fa fa-cog" aria-hidden="true"></i></button>
+        <div class="absolute-wrapper">
+            <div class="sticky-wrapper">
+                <button id="menu-toggle" class="" type="button"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div id="page-content-wrapper" class="add-gutters">
+            <div class="cards" id="patients">
+            </div>
         </div>
     </div>
-    <div id="page-content-wrapper" class="add-gutters">
-        <div class="cards" id="patients">
-        </div>
-    </div>
-</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/patients-list.js"></script>
 <script>
-$("#menu-toggle").click(function (e) {
-    e.preventDefault();
-    var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
 
-    $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
-    $("#wrapper").toggleClass("toggled");
-    $('#page-content-wrapper').toggleClass("container");
-    $('#page-content-wrapper').toggleClass("add-gutters");
+        $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
+        $("#wrapper").toggleClass("toggled");
+        $('#page-content-wrapper').toggleClass("container");
+        $('#page-content-wrapper').toggleClass("add-gutters");
 
-    if (isIE11) {
-        if ($("#wrapper").hasClass("toggled")) {
-            $('#sidebar-wrapper').css("margin-left", "-268px")
-        } else {
-            $('#sidebar-wrapper').css("margin-left", "-250px")
+        if (isIE11) {
+            if ($("#wrapper").hasClass("toggled")) {
+                $('#sidebar-wrapper').css("margin-left", "-268px")
+            } else {
+                $('#sidebar-wrapper').css("margin-left", "-250px")
+            }
         }
-    }
-});
+    });
 
-$('.card-header').click(function () {
-    $(this).find('i').toggleClass('fa-plus fa-minus')
-});
+    $('.card-header').click(function() {
+        $(this).find('i').toggleClass('fa-plus fa-minus')
+    });
 </script>
 
 </html>

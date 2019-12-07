@@ -1,10 +1,9 @@
 //_import.scss - used for importing all settings and modules
 //
 // Author:
-
 @import 'settings/settings';
 @import 'global';
-@import 'login-page/module';
 @import 'patients-list-page/module';
+@import 'login-page/module';
 @import 'patient-profile-page/module';
 @import 'create-patient/module';

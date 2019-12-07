@@ -2,7 +2,7 @@
 //
 // Author:
 @import 'login-page';
-
 .login {
-  @include login-page\apply();
+    @include nav-bar\apply();
+    @include login-page\apply();
 }

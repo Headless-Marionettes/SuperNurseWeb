@@ -12,9 +12,28 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:300,400,500&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/change-language.js"></script>
 </head>
 
-<body class="login container" onload="load()">
+<body class="login" onload="load()">
+    <nav class="navbar navbar-dark ">
+        <a class="navbar-brand" href="#">
+            <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
+        </a>
+        <ul class="nav navbar-nav">
+            <li><button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button></li>
+        </ul>
+        <!-- <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
+            <a class="navbar-brand desktop" href="#">
+                <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
+            </a>
+            <ul class="nav navbar-nav">
+                <li><button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button></li>
+            </ul>
+        </div> -->
+    </nav>
+
+
     <div class="wrapper-box col-10 col-md-8 col-lg-6">
         <div class="logo-wrapper">
             <img src="./images/nurse_logo.png" alt="nurse-image" class="img-fluid">
@@ -24,7 +43,7 @@
             <div class="form-group">
                 <div class="input-wrapper">
                     <input type="email" class="form-control" id="email" placeholder=" " name="email" required>
-                    <label for="email" class="form-label">Email address</label>
+                    <label for="email" class="form-label"><span lang="en">Email address</span><span lang="ru">Почта</span></label>
                 </div>
                 <span class="form-error-message hidden">" "</span>
             </div>
@@ -32,7 +51,7 @@
             <div class="form-group" id="auth-group">
                 <div class="input-wrapper">
                     <input type="password" id="password" class="form-control focused" placeholder=" " aria-describedby="passwordHelpBlock" name="password" required>
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label"><span lang="en">Password</span><span lang="ru">Пароль</span></label>
                 </div>
                 <span class="form-error-message hidden">" "</span>
             </div>
@@ -41,7 +60,7 @@
             </div>
 
             <div class="action">
-                <button type="submit" id="sign-in-button" class="primary-button">Login</button>
+                <button type="submit" id="sign-in-button" class="primary-button"><span lang="en">Login</span><span lang="ru">Войти</span></button>
             </div>
         </form>
     </div>

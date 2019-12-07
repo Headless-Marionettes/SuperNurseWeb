@@ -1,8 +1,17 @@
 var patientArray;
 
-var load = function () {
+var load = function() {
+    var currentLanguage = window.localStorage.getItem("language")
+
+    if (currentLanguage == "ru") {
+        $('[lang="en"]').hide();
+    } else {
+        $('[lang="ru"]').hide();
+    }
+
+
     $.ajaxSetup({
-        beforeSend: function (request) {
+        beforeSend: function(request) {
             console.log("before send")
             var token = "JWT " + window.localStorage.getItem("token");
             console.log(token)
@@ -11,11 +20,11 @@ var load = function () {
     });
 
     $.ajax({
-        url        : "https://super-nurse.herokuapp.com/patients",
-        action     : "GET",
-        context    : document.body,
+        url: "https://super-nurse.herokuapp.com/patients",
+        action: "GET",
+        context: document.body,
         crossDomain: true,
-        success    : function (data) {
+        success: function(data) {
 
             patientArray = data;
 
@@ -30,11 +39,11 @@ var load = function () {
                             <p id="FullNameID" class="name subheading">${data[i].first_name + " " + data[i].last_name}</p>
                             <div class="details">
                                 <div class="details-row">
-                                    <p class="details-label">DOB: </p>
+                                    <p class="details-label"><span lang="en">DOB: </span><span lang="ru">ДР: </span></p>
                                     <p id="DateOfBirth" class="details-value">${data[i].date_of_birth}</p>
                                 </div>
                                 <div class="details-row">
-                                    <p class="details-label">Room: </p>
+                                    <p class="details-label"><span lang="en">Room: </span><span lang="ru">Палата: </span></p>
                                     <p id="Room" class="details-value">${data[i].room}</p>
                                 </div>
                             </div>
@@ -42,15 +51,21 @@ var load = function () {
                     </a>
                 </div>`)
             }
+
+            if (currentLanguage == "ru") {
+                $('[lang="en"]').hide();
+            } else {
+                $('[lang="ru"]').hide();
+            }
         }
-    }).fail(function () {
+    }).fail(function() {
         $("#patients").html("error");
     })
 };
 
-$('#filters').ready(function () {
+$('#filters').ready(function() {
 
-    $(".btn").click(function (event) {
+    $(".btn").click(function(event) {
         event.preventDefault();
     });
 
@@ -63,7 +78,7 @@ $('#filters').ready(function () {
     var showAge4 = $("#age4:checked").length;
     var showAge5 = $("#age5:checked").length;
 
-    $("#filters input").change(function () {
+    $("#filters input").change(function() {
         showMales = $("#male:checked").length;
         showFemales = $("#female:checked").length;
 
@@ -84,11 +99,11 @@ $('#filters').ready(function () {
             console.log(age);
 
             if ((patientArray[i].sex == "F" && showFemales) || (patientArray[i].sex == "M" && showMales)) {
-                if ((age <= 60 && showAge1)
-                    || (age > 60 && age <= 70 && showAge2)
-                    || (age > 70 && age <= 80 && showAge3)
-                    || (age > 80 && age <= 90 && showAge4)
-                    || (age > 90 && showAge5)) {
+                if ((age <= 60 && showAge1) ||
+                    (age > 60 && age <= 70 && showAge2) ||
+                    (age > 70 && age <= 80 && showAge3) ||
+                    (age > 80 && age <= 90 && showAge4) ||
+                    (age > 90 && showAge5)) {
 
                     $('#patients').append(
                         `<div class="card-wrapper">
@@ -120,13 +135,13 @@ $('#filters').ready(function () {
     });
 });
 
-$('#sort').ready(function () {
+$('#sort').ready(function() {
     var fnAsc = $("#sort-fn-asc:checked").length;
     var fnDesc = $("#sort-fn-desc:checked").length;
     var lnAsc = $("#sort-ln-asc:checked").length;
     var lnDesc = $("#sort-ln-desc:checked").length;
 
-    $("#sort input").change(function () {
+    $("#sort input").change(function() {
         fnAsc = $("#sort-fn-asc:checked").length;
         fnDesc = $("#sort-fn-desc:checked").length;
         lnAsc = $("#sort-ln-asc:checked").length;
@@ -134,7 +149,7 @@ $('#sort').ready(function () {
 
         var patients = $(".card-wrapper").toArray();
 
-        patients.sort(function (a, b) {
+        patients.sort(function(a, b) {
             var keyA = a.querySelector("#FullNameID").innerHTML;
             var keyB = b.querySelector("#FullNameID").innerHTML;
 
@@ -154,7 +169,7 @@ $('#sort').ready(function () {
         });
 
         var container = $('#patients');
-        $.each(patients, function (i, patient) {
+        $.each(patients, function(i, patient) {
             container.append(patient);
         });
     });
@@ -162,10 +177,10 @@ $('#sort').ready(function () {
 
 
 
-var searchPatient = function () {
+var searchPatient = function() {
     var request = $("#search-input").val().toLowerCase()
 
-    $('.card-wrapper').each(function (i, obj) {
+    $('.card-wrapper').each(function(i, obj) {
         var fullName = obj.querySelector("#FullNameID").innerHTML;
         var dateOfBirth = obj.querySelector("#DateOfBirth").innerHTML;
         var room = obj.querySelector("#Room").innerHTML;
@@ -180,6 +195,6 @@ var searchPatient = function () {
     });
 };
 
-$('#search-input').on('input', function (e) {
+$('#search-input').on('input', function(e) {
     searchPatient()
 });
