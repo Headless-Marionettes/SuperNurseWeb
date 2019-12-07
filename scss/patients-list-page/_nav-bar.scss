@@ -50,6 +50,8 @@
 
     .navbar-nav {
       margin-top: rem-calc(10);
+      align-items: center;
+
       @include media-query\apply('large') {
         margin-top: rem-calc(0);
       }
