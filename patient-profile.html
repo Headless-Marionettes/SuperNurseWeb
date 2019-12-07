@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Super Nurse | Patient Profile</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link href="./css/styles.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script src="js/patient-profile.js"></script>
-<script src="js/change-language.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Nurse | Patient Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script src="js/patient-profile.js"></script>
+    <script src="js/change-language.js"></script>
 </head>
 
 <body class="patients-profile" onload="load(), loadLang()">
 
     <nav class="navbar navbar-dark navbar-expand-md ">
         <a class="navbar-brand mobile" href="./patients-list.html">
-            <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Super Nurse
+            <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
             <a class="navbar-brand desktop" href="./patients-list.html">
-                <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                Super Nurse
+                <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
             </a>
             <ul class="nav navbar-nav">
                 <li><button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button></li>
                 <li><a href="./patients-list.html">View Patients</a></li>
                 <li><a href="./index.html">Log out</a></li>
             </ul>
-            </div>
-        </nav>
+        </div>
+    </nav>
 
     <div class="container bg-white shadow">
         <div class="container">
             <img src="./images/oldman.jpg" alt="" class="p-2 mr-3 profile-picture">
             <div class="profile-text">
                 <h2 id="patient-name" class="pt-1 font-weight-bold">Patient name</h2>
+<<<<<<< HEAD
                 <div class="profile-stat font-weight-bold"><span lang="en">Room: </span><span lang="ru">Номер: </span> <span class="font-weight-normal" id="patient-room"></span></div>
                 <div class="profile-stat font-weight-bold">Date of Birth: <span class="font-weight-normal" id="patient-birth"></span></div>
                 <div class="profile-stat font-weight-bold">Height: <span class="font-weight-normal" id="patient-height"></span></div>
                 <div class="profile-stat font-weight-bold">Weight: <span class="font-weight-normal" id="patient-weight"></span></div>
                 <div class="profile-stat font-weight-bold">Allergies: <span class="font-weight-normal" id="patient-allergies"></span></div>
+=======
+                <div class="profile-stat font-weight-bold"><span lang="en">Room: </span><span lang="ru">Номер: </span><span class="font-weight-normal" id="patient-room"></span></div>
+                <div class="profile-stat font-weight-bold"><span lang="en">Date of Birth: </span><span lang="ru">Дата рождения: </span><span class="font-weight-normal" id="patient-birth"></span></div>
+                <div class="profile-stat font-weight-bold"><span lang="en">Height: </span><span lang="ru">Рост: </span><span class="font-weight-normal" id="patient-height"></span></div>
+                <div class="profile-stat font-weight-bold"><span lang="en">Weight: </span><span lang="ru">Вес: </span><span class="font-weight-normal" id="patient-weight"></span></div>
+                <div class="profile-stat font-weight-bold"><span lang="en">Allergies: </span><span lang="ru">Аллергии: </span><span class="font-weight-normal" id="patient-allergies"></span></div>
+>>>>>>> bf5a4cf2ef280605aacd7147d462f14e12091a9b
             </div>
         </div>
 
@@ -97,4 +104,5 @@
         </div>
     </div>
 </body>
+
 </html>
