@@ -49,7 +49,7 @@ var load = function() {
                 `<div class="shadow border rounded p-3 mb-3">
                     <h3 class="text-dark-primary">Report from ${data[i].date}</h3>
                     <div class="row">
-                        <div class="col-md font-weight-bold mt-4">Blood Pressure: ${data[i].blood_pressure}</div>
+                        <div class="col-md font-weight-bold mt-4"><span lang="en">Blood Pressure: </span><span lang="ru">Blood Pressure2: </span>${data[i].blood_pressure}</div>
                         <div class="col-md font-weight-bold mt-4">Respiratory Rate: ${data[i].respiratory_rate}</div>
                     </div>
                     <div class="row">
@@ -61,6 +61,7 @@ var load = function() {
                     </div>
                 </div>`
                 )
+                $('[lang="ru"]').hide();
             }
         },
         error: function() {
