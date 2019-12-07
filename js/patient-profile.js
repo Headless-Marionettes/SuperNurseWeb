@@ -1,4 +1,6 @@
 var load = function() {
+    $('[lang="ru"]').hide();
+
     $.ajaxSetup({
         beforeSend: function(request) {
             console.log("before send")
