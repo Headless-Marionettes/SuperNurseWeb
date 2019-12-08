@@ -165,12 +165,18 @@ h1, h2, h3, h4, h5, h6, .large-copy, .text-muted {
     }
 
     @include media-query\apply('medium') {
-      flex: 0 0 calc(50% - 10px);
-      margin: 0 5px 10px;
+      flex: 0 0 calc(50% - 18px);
+      margin: 0 9px 10px;
+    }
+
+    @include media-query\apply('large') {
+      flex: 0 0 calc(50% - 30px);
+      margin: 0 15px 10px;
     }
 
     @include media-query\apply('xlarge') {
-      flex: 0 0 calc(33% - 10px);
+      flex: 0 0 calc(33% - 18px);
+      margin: 0 9px 20px;
     }
 
     @include media-query\apply('xxlarge') {

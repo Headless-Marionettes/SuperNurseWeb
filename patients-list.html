@@ -17,15 +17,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--    <script src="js/bootstrap.js"></script>-->
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/change-language.js"></script>
 
 </head>
 
 <body class="patients-list" onload="load()">
-    <nav class="navbar navbar-dark navbar-expand-md ">
+    <nav class="navbar navbar-dark navbar-expand-md">
         <a class="navbar-brand mobile" href="#">
             <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
         </a>
@@ -36,7 +34,7 @@
             <a class="navbar-brand desktop" href="#">
                 <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
             </a>
-            <form class="navbar-form col-12 col-md-5">
+            <form class="navbar-form col-12 col-md-4">
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Search" id="search-input">
                     <span class="input-group-append">
@@ -55,7 +53,7 @@
     </nav>
     <h1 class="banner"><span lang="en">All patients</span><span lang="ru">Пациенты</span></h1>
     <div id="wrapper" class="toggled">
-        <div class="absolute-wrapper">
+        <div class="absolute-wrapper submenu">
             <div class="sticky-wrapper">
                 <div id="sidebar-wrapper">
                     <div class="side-bar-heading">
@@ -65,9 +63,9 @@
                         <div class="card">
                             <button id="headingOne" class="btn btn-sm card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <span lang="en">FILTER</span><span lang="ru">ФИЛЬТР</span>
-                            <i class="fa fa-minus" aria-hidden="true"></i>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
                         </button>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOnex" data-parent="#accordion">
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOnex" data-parent="#accordion">
                                 <form id="filters">
                                     <div class="card-body" id="child1">
 
@@ -97,7 +95,7 @@
                                             <div class="card">
                                                 <button class="card-header btn btn-sm" data-toggle="collapse" data-target="#collapseAge" aria-expanded="true" aria-controls="collapseAge">
                                                 <span lang="en">AGE</span><span lang="ru">ВОЗРАСТ</span>
-                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
                                             </button>
                                                 <div class="collapse" id="collapseAge" data-parent="#accordion-inner">
                                                     <div class="card-body">
@@ -181,7 +179,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute-wrapper">
+        <div class="absolute-wrapper wheel">
             <div class="sticky-wrapper">
                 <button id="menu-toggle" class="" type="button"><i class="fa fa-cog" aria-hidden="true"></i></button>
             </div>

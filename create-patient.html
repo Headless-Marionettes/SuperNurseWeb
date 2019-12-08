@@ -2,124 +2,126 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Super Nurse | Create Patient</title>
-    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
-    <link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Super Nurse | Create Patient</title>
+<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="./css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
+<link href="./css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
 
-    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto:400,500&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/change-language.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/change-language.js"></script>
 </head>
 
 <body class="create-patient-page" onload="load()">
-    <nav class="navbar navbar-dark navbar-expand-md ">
-        <a class="navbar-brand mobile" href="./patients-list.html">
-            <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
-        </a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-dark navbar-expand-md ">
+    <a class="navbar-brand mobile" href="./patients-list.html">
+        <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
-            <a class="navbar-brand desktop" href="./patients-list.html">
-                <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
-            </a>
-            <ul class="nav navbar-nav">
-                <li><button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button></li>
-                <li><a href="./patients-list.html"><span lang="en">View Patients</span><span lang="ru">Пациенты</span></a></li>
-                <li><a href="./index.html"><span lang="en">Log out</span><span lang="ru">Выйти</span></a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <h1 class="text-center"><span lang="en">Create patient</span><span lang="ru">Создать пользователя</span></h1>
+    <div class="collapse navbar-collapse no-gutters" id="navbarCollapse">
+        <a class="navbar-brand desktop" href="./patients-list.html">
+            <img src="./images/nurse-logo2.png" width="30" height="30" class="d-inline-block align-top" alt=""> Super Nurse
+        </a>
+        <ul class="nav navbar-nav">
+            <li>
+                <button class="btn btn-sm btn-outline-light my-2 my-sm-0" type="button" onclick="switchLang()"><span lang="en">RU</span><span lang="ru">EN</span></button>
+            </li>
+            <li><a href="./patients-list.html"><span lang="en">View Patients</span><span lang="ru">Пациенты</span></a></li>
+            <li><a href="./index.html"><span lang="en">Log out</span><span lang="ru">Выйти</span></a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="text-center"><span lang="en">Create patient</span><span lang="ru">Создать Пациента</span></h1>
 
-        <div class="container form-wrapper">
-            <form id="new-patient-form" class="user-info">
-                <div class="three-col-fields">
-                    <div class="form-group">
-                        <div class="input-wrapper">
-                            <input type="text" class="form-control" id="patientFirstName" placeholder=" " required>
-                            <label for="patientFirstName" class="form-label required"><span lang="en">First Name</span><span lang="ru">Имя</span></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-wrapper">
-                            <input type="text" class="form-control" id="patientLastName" placeholder=" " required>
-                            <label for="patientLastName" class="form-label required"><span lang="en">Last Name</span><span lang="ru">Фамилия</span></label>
-                        </div>
-                    </div>
-
-                    <div class="two-col-fields">
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientSex" placeholder=" " pattern="M|F" oninvalid="this.setCustomValidity('Sex should be M or F')" oninput="setCustomValidity('')" required>
-                                <label for="patientSex" class="form-label required"><span lang="en">Sex</span><span lang="ru">Пол</span></label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="number" class="form-control" id="patientRoom" placeholder=" " required>
-                                <label for="patientRoom" class="form-label required"><span lang="en">Room</span><span lang="ru">Палата</span></label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="two-col-fields">
-                    <div class="two-col-fields">
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="number" class="form-control" id="patientHeight" placeholder=" " required>
-                                <label for="patientHeight" class="form-label required"><span lang="en">Height (cm)</span><span lang="ru">Рост</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="number" class="form-control" id="patientWeight" placeholder=" " required>
-                                <label for="patientWeight" class="form-label required"><span lang="en">Weight (kg)</span><span lang="ru">Вес</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="two-col-fields">
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="text" class="form-control" id="patientBloodType" placeholder=" " pattern='^(A|B|AB|O)[-+]$' required>
-                                <label for="patientBloodType" class="form-label required"><span lang="en">Blood T.</span><span lang="ru">Тип крови</span></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <input type="date" class="form-control" id="patientDateOfBirth" placeholder=" " required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <div class="container form-wrapper">
+        <form id="new-patient-form" class="user-info">
+            <div class="three-col-fields">
                 <div class="form-group">
                     <div class="input-wrapper">
-                        <input type="text" class="form-control" id="patientAlergies" placeholder=" ">
-                        <label for="patientAlergies" class="form-label"><span lang="en">Allergies</span><span lang="ru">Аллергии</span></label>
+                        <input type="text" class="form-control" id="patientFirstName" placeholder=" " required>
+                        <label for="patientFirstName" class="form-label required"><span lang="en">First Name</span><span lang="ru">Имя</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" id="patientLastName" placeholder=" " required>
+                        <label for="patientLastName" class="form-label required"><span lang="en">Last Name</span><span lang="ru">Фамилия</span></label>
                     </div>
                 </div>
 
-                <div class="two-col-fields actions">
-                    <button type="submit" id="submit-button" class="primary-button"><span lang="en">Submit</span><span lang="ru">Отправить</span></button>
-                    <button type="reset" class="secondary-button"><span lang="en">Reset</span><span lang="ru">Сбросить</span></button>
+                <div class="two-col-fields">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" class="form-control" id="patientSex" placeholder=" " pattern="M|F" oninvalid="this.setCustomValidity('Sex should be M or F')" oninput="setCustomValidity('')" required>
+                            <label for="patientSex" class="form-label required"><span lang="en">Sex</span><span lang="ru">Пол</span></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="number" class="form-control" id="patientRoom" placeholder=" " required>
+                            <label for="patientRoom" class="form-label required"><span lang="en">Room</span><span lang="ru">Палата</span></label>
+                        </div>
+                    </div>
                 </div>
-            </form>
-        </div>
+
+            </div>
+
+            <div class="two-col-fields">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="number" class="form-control" id="patientHeight" placeholder=" " required>
+                        <label for="patientHeight" class="form-label required"><span lang="en">Height (cm)</span><span lang="ru">Рост</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="number" class="form-control" id="patientWeight" placeholder=" " required>
+                        <label for="patientWeight" class="form-label required"><span lang="en">Weight (kg)</span><span lang="ru">Вес</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="two-col-fields">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" id="patientBloodType" placeholder=" " pattern='^(A|B|AB|O)[-+]$' required>
+                        <label for="patientBloodType" class="form-label required"><span lang="en">Blood Type</span><span lang="ru">Тип крови</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="date" class="form-control" id="patientDateOfBirth" placeholder=" " required>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <input type="text" class="form-control" id="patientAlergies" placeholder=" ">
+                    <label for="patientAlergies" class="form-label"><span lang="en">Allergies</span><span lang="ru">Аллергии</span></label>
+                </div>
+            </div>
+
+            <div class="two-col-fields actions">
+                <button type="submit" id="submit-button" class="primary-button"><span lang="en">Submit</span><span lang="ru">Отправить</span></button>
+                <button type="reset" class="secondary-button"><span lang="en">Reset</span><span lang="ru">Сбросить</span></button>
+            </div>
+        </form>
     </div>
+</div>
 </body>
 <script src="js/create-patient.js"></script>
 

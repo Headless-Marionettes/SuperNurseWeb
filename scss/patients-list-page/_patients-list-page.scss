@@ -10,6 +10,11 @@
 
     h4 {
       color: get-color('accent');
+      display: none;
+
+      @include media-query\apply('large') {
+        display: inline;
+      }
     }
   }
 
@@ -27,7 +32,6 @@
 
 
 @mixin patients-list-page\apply() {
-  //TODO: put styles for patients list page here CSS and SASS format is OK
   .banner {
     text-align: center;
     margin: rem-calc(20) 0;
@@ -36,30 +40,46 @@
     }
   }
 
+  .wheel {
+    display: none;
+
+    @include media-query\apply('large') {
+      display: block;
+    }
+  }
+
   .sticky-wrapper {
-    position: sticky;
-    top: rem-calc(70);
+
+    @include media-query\apply('large') {
+      position: sticky;
+      top: rem-calc(70);
+    }
   }
 
   .absolute-wrapper {
-    position: absolute;
-    height: 100%;
+    @include media-query\apply('large') {
+      position: absolute;
+      height: 100%;
+    }
   }
 
   #sidebar-wrapper {
     @include accordion\apply();
-
-    left: 250px;
-    width: 250px;
-    height: auto;
-    margin-left: -250px;
-    transition: all 0.5s ease;
+    @include media-query\apply('large') {
+      left: 250px;
+      width: 250px;
+      height: auto;
+      margin-left: -250px;
+      transition: all 0.5s ease;
+    }
   }
 
 
   #wrapper {
-    padding-left: 250px;
-    transition: all 0.5s ease;
+    @include media-query\apply('large') {
+      padding-left: 250px;
+      transition: all 0.5s ease;
+    }
   }
 
   #wrapper.toggled {
@@ -67,7 +87,11 @@
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 0px;
+    width: 100%;
+
+    @include media-query\apply('large') {
+      width: 0px;
+    }
   }
 
   #menu-toggle {
@@ -95,6 +119,14 @@
 
     i {
       color: get-color('accent')
+    }
+  }
+
+  .submenu {
+    margin-bottom: rem-calc(10);
+
+    @include media-query\apply('large') {
+      margin-bottom: 0;
     }
   }
 
